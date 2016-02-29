@@ -214,7 +214,7 @@
             {
                 var deltaNumSame = numTrainingNN[j] - numSameTraining[j];
                 var difTmp = numSameTraining.ArrayDivide(numTrainingEachClass.Select(x => (double)(x * this.K)).ToArray());
-                var deltaNumDif = difTmp.Sum() - numSameTraining[j] / ((double)(numTrainingEachClass[j] * this.K));
+                var deltaNumDif = difTmp.Sum() - (numSameTraining[j] / ((double)(numTrainingEachClass[j] * this.K)));
 
                 tsEnn[j] = ((deltaNumSame + hitNumKNN[j] - (this.ClassStatistics[j] * this.K)) / ((numTrainingEachClass[j] + 1) * this.K)) - deltaNumDif;
             }
@@ -223,15 +223,14 @@
         }
 
         /// <summary>
-        /// We train the ENN algorithm by computing a "kNN map". See [1] and the source code for a explanation of a waited kNN map.
+        /// We train the ENN algorithm by computing a "kNN map". See [1] and the source code for a explanation of a weighted kNN map.
         /// </summary>
         /// <param name="trainingData">The training data set.</param>
         /// <param name="trainingOutputs">The supervised classification outputs of the training data set.</param>
         public void Train(T[] trainingData, int[] trainingOutputs)
         {
             this.trainingData = trainingData;
-            this.trainingOutputs = trainingOutputs;
-            this.trainingOutputs.BijectWithNaturals();
+            this.trainingOutputs = trainingOutputs.BijectWithNaturals();
 
             // holds the k-nearest distances
             var weightedKNNDistance = new double[trainingData.Length][];

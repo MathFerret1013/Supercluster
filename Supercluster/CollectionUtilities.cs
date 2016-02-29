@@ -135,11 +135,13 @@
         /// <summary>
         /// Takes a list of integers and returns its bijection with the natural numbers (includes 0)
         /// </summary>
-        /// <param name="source"></param>
-        public static void BijectWithNaturals(this int[] source)
+        /// <param name="source">The input array.</param>
+        /// <returns>An array that is the bijection of the <paramref name="source"/> array with the natural numbers (includes 0)</returns>
+        public static int[] BijectWithNaturals(this int[] source)
         {
             var distinctValues = source.Distinct().OrderBy(x => x).ToArray();
             var dict = new Dictionary<int, int>();
+            var returnArray = new int[source.Length];
 
             for (int i = 0; i < distinctValues.Length; i++)
             {
@@ -148,8 +150,10 @@
 
             for (int i = 0; i < source.Length; i++)
             {
-                source[i] = dict[source[i]];
+                returnArray[i] = dict[source[i]];
             }
+
+            return returnArray;
         }
 
         /// <summary>
@@ -324,6 +328,11 @@
             return m;
         }
 
+        /// <summary>
+        /// Returns the mode of the array
+        /// </summary>
+        /// <param name="array">The array to be traversed.</param>
+        /// <returns>The mode of the aray</returns>
         public static int Mode(this int[] array)
         {
             // Count all the values

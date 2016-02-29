@@ -17,7 +17,7 @@
         public void MaxIndexTest()
         {
             var intArray = new int[] { 3, 5, 8, int.MaxValue, 6, -78, 64 };
-            var doubleArray = new double[] { 3.0, 5.0,  double.MaxValue, 6.0, -78.0, 64.0 };
+            var doubleArray = new double[] { 3.0, 5.0, double.MaxValue, 6.0, -78.0, 64.0 };
 
             var maxIndex = intArray.MaxIndex();
             var maxIndex2 = doubleArray.MaxIndex();
@@ -43,7 +43,7 @@
         [Test]
         public void ModeIndexTest()
         {
-            var intArray = new int[] { 1, 2, 2, 5, 5, 5, 5, 10, 10  };
+            var intArray = new int[] { 1, 2, 2, 5, 5, 5, 5, 10, 10 };
 
             var mode = intArray.Mode();
 
@@ -63,10 +63,10 @@
             // 356 6
 
 
-            var testArray = new int[] { -99, 4 , 356, 3, 2, 2, 2, 2, -1, 90 };
-            testArray.BijectWithNaturals();
+            var testArray = new int[] { -99, 4, 356, 3, 2, 2, 2, 2, -1, 90 };
+            testArray = testArray.BijectWithNaturals();
 
-            Assert.That(testArray.SequenceEqual(new int[] {0, 4, 6, 3, 2, 2, 2, 2, 1, 5}));
+            Assert.That(testArray.SequenceEqual(new int[] { 0, 4, 6, 3, 2, 2, 2, 2, 1, 5 }));
         }
 
         [Test]
@@ -74,8 +74,8 @@
         {
             var matrix = new double[,]
                              {
-                                 { 1, 1, 1 }, 
-                                 { 1, -1, 1 }, 
+                                 { 1, 1, 1 },
+                                 { 1, -1, 1 },
                                  { 0, 1, 2 }
                              };
 

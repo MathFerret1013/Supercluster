@@ -155,7 +155,7 @@ namespace Supercluster_Tests
             {
                 trainingLabels = (int[])(new BinaryFormatter().Deserialize(fs));
             }
-            trainingLabels.BijectWithNaturals();
+            trainingLabels = trainingLabels.BijectWithNaturals();
             using (var fs = new FileStream(@"..\..\data\ENN\TestingData.dat", FileMode.Open))
             {
                 testingData = (double[][])(new BinaryFormatter().Deserialize(fs));
@@ -164,19 +164,19 @@ namespace Supercluster_Tests
             {
                 testingLabels = (int[])(new BinaryFormatter().Deserialize(fs));
             }
-            testingLabels.BijectWithNaturals();
+            testingLabels = trainingLabels.BijectWithNaturals();
 
             using (var fs = new FileStream(@"..\..\data\ENN\PredictionLabel.dat", FileMode.Open))
             {
                 PredictionLabels = (int[])(new BinaryFormatter().Deserialize(fs));
             }
-            PredictionLabels.BijectWithNaturals();
+            PredictionLabels = PredictionLabels.BijectWithNaturals();
 
 
             // Use out implementation to calculate the  the distance and label maps
             enn.Train(trainingData, trainingLabels);
             var predictedLabels = testingData.Select(t => enn.Compute(t)).ToArray();
-            
+
             Assert.That(PredictionLabels.SequenceEqual(predictedLabels));
         }
 
