@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/e600e278-690e-40b0-95c6-c7d51c0b05a7.htm" />
+  <HelpTOCNode Id="69dde57f-8668-4e15-bcf8-19489921e750" Title="Version History" Url="html/b7a3e6ff-e007-4f6f-83c6-e795f270f847.htm">
+    <HelpTOCNode Title="Version 1.0.0.0" Url="html/7d3c96aa-9eb6-4708-a227-f51a71f1c35c.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="c91d63c3-0780-4d77-b71c-0289c19cda0b" Title="Supercluster" Url="html/1cad8578-9813-ec0d-b78d-321c3e8720d1.htm">
+    <HelpTOCNode Id="533c4b80-a7cf-49db-97f1-592cfe5b8104" Title="CollectionUtilities Class" Url="html/83540b78-ba96-a747-becf-f93466a84010.htm">
+      <HelpTOCNode Id="3224eeff-d449-49cb-8e24-6a44ee491a39" Title="CollectionUtilities Methods" Url="html/97a78cc2-4b90-1a5a-1f54-66ee930c6fdd.htm">
+        <HelpTOCNode Title="ArrayAdd Method " Url="html/56c75396-18a1-866a-af67-6402952d4f5d.htm" />
+        <HelpTOCNode Title="ArrayDivide Method " Url="html/18a587a7-6e68-2e7e-8253-90c724dec961.htm" />
+        <HelpTOCNode Title="ArraySubtract Method " Url="html/958affe0-36ab-324b-9766-231ecf82c97c.htm" />
+        <HelpTOCNode Title="BijectWithNaturals Method " Url="html/04fe849f-50f1-b6a6-d87c-6f64a2d1f18f.htm" />
+        <HelpTOCNode Title="FindAllIndex(T) Method " Url="html/a0a418a6-8123-810b-ff00-7af56a873771.htm" />
+        <HelpTOCNode Title="GetColumn(T) Method " Url="html/574a8a43-12d1-480c-2dd6-fb6aa5a5d583.htm" />
+        <HelpTOCNode Title="GetRow(T) Method " Url="html/a6576cd4-e77a-ebbb-fbe5-38b60e0a80ca.htm" />
+        <HelpTOCNode Id="25cfe4f6-7406-4c2f-840b-966b75949480" Title="MaxIndex Method " Url="html/871900b9-c650-a499-bfe7-fe1b0c405b33.htm">
+          <HelpTOCNode Title="MaxIndex Method (Double[])" Url="html/d7755439-47a8-e284-0d45-025bde3b46c5.htm" />
+          <HelpTOCNode Title="MaxIndex Method (Int32[])" Url="html/a18b008f-1eeb-0eca-00b6-315cdc2de7bb.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MaxIndexRandomTies Method " Url="html/e6b22b2b-79d8-6a07-df9e-48f3ddc64cda.htm" />
+        <HelpTOCNode Id="5f8594dd-92eb-450e-b417-ae3de8dc0f2e" Title="MinIndex Method " Url="html/3bf90c70-9733-232a-8990-ff4eaa8439bd.htm">
+          <HelpTOCNode Title="MinIndex Method (Double[])" Url="html/a8c2ea54-4a05-5d58-56ba-bb1c64a408ac.htm" />
+          <HelpTOCNode Title="MinIndex Method (Int32[])" Url="html/92dd4933-62e7-e605-36cd-daa9bc2ae924.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Mode Method " Url="html/0d9762e1-4eca-ea98-4789-5cb2a7dc06b2.htm" />
+        <HelpTOCNode Title="SetAllElements(T) Method " Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
+        <HelpTOCNode Title="SetColumn(T) Method " Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
+        <HelpTOCNode Title="SetRow(T) Method " Url="html/23b6697a-1884-447a-17a8-a36965cd0565.htm" />
+        <HelpTOCNode Id="b66edd39-25c1-4beb-86b2-5b178258ff32" Title="SubsetByIndex Method " Url="html/b7788941-44bc-d39c-d36b-3bf97d0e40ee.htm">
+          <HelpTOCNode Title="SubsetByIndex(T) Method (IList(T), Int32[])" Url="html/20918338-b9ef-10f3-d89f-fe24e7692023.htm" />
+          <HelpTOCNode Title="SubsetByIndex(T) Method (T[,], Int32[])" Url="html/b4d127ea-98d0-4f5a-d557-b92e74fecdf1.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7d7d101f-721e-46e1-9231-1778bfa27a0e" Title="DoubleArrayEqualityComparer Class" Url="html/62a980d9-99f7-4a86-5de2-de6c7ae3ceb0.htm">
+      <HelpTOCNode Title="DoubleArrayEqualityComparer Constructor " Url="html/47d0a3e9-620b-bc6e-228c-f1489be88791.htm" />
+      <HelpTOCNode Id="59d71632-516e-4b19-b998-f59106aaf7f0" Title="DoubleArrayEqualityComparer Methods" Url="html/380b2b09-6840-9b1b-adb7-b11b48ecbd15.htm">
+        <HelpTOCNode Id="2aad5c48-6552-4d8d-b3f9-f157c7dcf6bd" Title="Equals Method " Url="html/926e443e-40b8-6a32-a78f-42dccd7c4913.htm">
+          <HelpTOCNode Title="Equals Method (Double[], Double[])" Url="html/fd6e1cbf-3542-18cd-7bf8-b451cf330e7c.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="5f015d47-2f80-45aa-94da-67e267f0a2f7" Title="GetHashCode Method " Url="html/7ce456dc-d168-d375-287f-071b33d870d8.htm">
+          <HelpTOCNode Title="GetHashCode Method (Double[])" Url="html/2815ac61-63de-f1fc-8b1d-d86fca7b98a5.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ffda2980-7020-41a5-97a3-d14f0287256f" Title="DoubleEqualityComparer Class" Url="html/985102d6-61ad-f136-bf95-9ca7e8a161bd.htm">
+      <HelpTOCNode Title="DoubleEqualityComparer Constructor " Url="html/0b8520f8-12f7-258e-a579-a78eeec9a9c8.htm" />
+      <HelpTOCNode Id="f56f0910-5fc9-4cf2-b95d-b555aea9376c" Title="DoubleEqualityComparer Methods" Url="html/00f4030a-5c5c-61a0-9f8d-5a721eac8412.htm">
+        <HelpTOCNode Id="3d0151e5-96d3-4c39-a072-6ede3bf5c9c8" Title="Equals Method " Url="html/efe27537-75c9-7f52-44df-5c2dc9bba3d3.htm">
+          <HelpTOCNode Title="Equals Method (Double, Double)" Url="html/099946a2-c1bb-2e82-d432-9b6b8f213712.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7224edf0-94cc-4211-8ced-1109f6188b5f" Title="GetHashCode Method " Url="html/71971459-f604-38f1-55ee-d555a0db1dcc.htm">
+          <HelpTOCNode Title="GetHashCode Method (Double)" Url="html/df0d0822-92b5-1aa9-bbfa-6df94f275718.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="af265ed3-0f97-432b-91a1-0831398cd4fe" Title="NearestNeighborPoint(T) Structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm">
+      <HelpTOCNode Title="NearestNeighborPoint(T) Constructor " Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
+      <HelpTOCNode Id="15d29086-3f53-4aa5-9474-b7e278235b80" Title="NearestNeighborPoint(T) Methods" Url="html/7fb3cb75-00c7-7d1c-c56c-60c424eb3696.htm">
+        <HelpTOCNode Title="CompareTo Method " Url="html/9fba2b16-edf1-83be-4bb2-0b34737a86cb.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="5a79a005-6815-4ea4-9488-d5000f1a0632" Title="NearestNeighborPoint(T) Fields" Url="html/63341455-043f-5bfe-21c9-5f9b06374611.htm">
+        <HelpTOCNode Title="ClassLabel Field" Url="html/6e5398bc-1f81-5643-1dfd-de0b40926fd1.htm" />
+        <HelpTOCNode Title="Distance Field" Url="html/0d204d9c-5760-e809-46b2-b3d3d689149d.htm" />
+        <HelpTOCNode Title="point Field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ca66a299-447b-4915-a07b-34f4ca76ac92" Title="SortedArray(T) Class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm">
+      <HelpTOCNode Title="SortedArray(T) Constructor " Url="html/5c2b8a31-36c4-d73a-6f52-51ae7640a31d.htm" />
+      <HelpTOCNode Id="a3263265-7b52-46d9-9ccc-9b7225f50f0b" Title="SortedArray(T) Properties" Url="html/afce46ed-45b5-daf1-1f72-c6a9e75c65c6.htm">
+        <HelpTOCNode Title="Item Property " Url="html/306e1054-1ddf-7d67-ce90-f81e8d928b90.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9198224c-4e3c-4958-a8b5-92d2b1e69d35" Title="SortedArray(T) Methods" Url="html/da953547-75aa-e00e-54b5-aedf7eb8c073.htm">
+        <HelpTOCNode Title="Add Method " Url="html/c9dc212a-c9be-133e-5963-682a92c3097b.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="021dd39d-d97d-4a24-8521-456c6e955cd5" Title="SuperclusterContants Class" Url="html/0632ece9-e405-f522-e4c6-0977a6e09e49.htm">
+      <HelpTOCNode Id="52b37251-7f52-4db2-a853-f481ff67bcf7" Title="SuperclusterContants Fields" Url="html/e238925e-fe7a-98d5-b53c-a743db71e721.htm">
+        <HelpTOCNode Title="DOUBLE_TOLERANCE Field" Url="html/4ab1ccce-054d-1a4b-1436-721e531eb69e.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="182c350e-738e-42e0-ae17-4aa83b5e7095" Title="Supercluster.Algorithms" Url="html/e08ed7cb-be1e-820e-b84b-a78b34f13817.htm">
+    <HelpTOCNode Id="20acc6f8-ac17-42e9-ba20-d1881db68c64" Title="MostDistantPoints Class" Url="html/8e9f1125-f8c1-c7da-a12d-02cdc06630cb.htm">
+      <HelpTOCNode Id="890b4d46-a4b9-42d1-b1de-61b1cf8a0337" Title="MostDistantPoints Methods" Url="html/386c181b-c4d9-95fb-bc85-6d1be7494319.htm">
+        <HelpTOCNode Title="MaximallyDistantPoints(T) Method " Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="fd899d08-0fd2-4125-b073-47cc67357faf" Title="Supercluster.Classification" Url="html/04d1386f-01bd-469a-6cd1-b1d7fdf71313.htm">
+    <HelpTOCNode Id="8e044c6f-2a26-4fc7-b4e4-464c7e77b7cf" Title="ExtendedNearestNeighbors(T) Class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm">
+      <HelpTOCNode Title="ExtendedNearestNeighbors(T) Constructor " Url="html/343f3177-3229-8d87-417d-3e9a182c9791.htm" />
+      <HelpTOCNode Id="ff2ca4db-b02b-4fbb-9f84-e50f9cbecea9" Title="ExtendedNearestNeighbors(T) Properties" Url="html/a0ace3db-4d33-35fb-41bc-f9ba660fd620.htm">
+        <HelpTOCNode Title="Clusters Property " Url="html/daa1b48a-ba0e-2839-e8a9-c7de2248ff2f.htm" />
+        <HelpTOCNode Title="K Property " Url="html/f8696529-656f-b898-1e5c-bb6d60a98ad1.htm" />
+        <HelpTOCNode Title="Metric Property " Url="html/43305f7d-b30a-3306-c5a3-afb0ab308e87.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3607e806-406a-4a37-b756-598b7b93aaf7" Title="ExtendedNearestNeighbors(T) Methods" Url="html/ee6b35da-47ed-44b1-e319-4d93064240c9.htm">
+        <HelpTOCNode Title="Compute Method " Url="html/4f9981a7-c3e0-e72f-6bdb-7df594644392.htm" />
+        <HelpTOCNode Title="Predict Method " Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
+        <HelpTOCNode Title="Train Method " Url="html/b3533473-ed0f-5494-6424-47d2e5ba2787.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9937934f-8d42-4a6e-8c7e-c7d340dfbcc1" Title="ExtendedNearestNeighbors(T) Fields" Url="html/8a4d3a11-c461-53af-f93f-245cd969f1a4.htm">
+        <HelpTOCNode Title="ClassStatistics Field" Url="html/a5d85043-9aa6-2c91-8092-ef8c7bac7caf.htm" />
+        <HelpTOCNode Title="WeightedKNNDistance Field" Url="html/bf6517d0-fa57-3f0a-82cc-eaf2e0cec74c.htm" />
+        <HelpTOCNode Title="WeightedKNNLabels Field" Url="html/1b9f01d5-8acf-0f8e-6bf6-50d33231d313.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="86618381-b699-45df-915d-33c4f190c831" Title="ISupervisedClassifier(T) Interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm">
+      <HelpTOCNode Id="99cce6c7-d344-43b0-9f94-c84bae0b5ed0" Title="ISupervisedClassifier(T) Methods" Url="html/dbf38c56-3235-e99c-4f65-54833ef39293.htm">
+        <HelpTOCNode Title="Compute Method " Url="html/ee75a2cb-3ac4-11e1-b433-d11f33f63af1.htm" />
+        <HelpTOCNode Title="Train Method " Url="html/f7dbaec3-6bcf-f588-e884-a1f8f6c1690b.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d30beec9-0bb1-4434-8b5e-831b7e6a6ede" Title="KNearestNeighbors(T) Class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm">
+      <HelpTOCNode Title="KNearestNeighbors(T) Constructor " Url="html/fe091b67-a834-d8ad-795a-f4a5ffe9edf8.htm" />
+      <HelpTOCNode Id="85e1d41f-64ba-4d65-840d-fb6039bcbb99" Title="KNearestNeighbors(T) Properties" Url="html/23985790-5472-af87-08bb-deedb8ae99d5.htm">
+        <HelpTOCNode Title="Clusters Property " Url="html/c6de9759-3c45-cef2-5ca9-cfd884f4ce7f.htm" />
+        <HelpTOCNode Title="K Property " Url="html/9d2df5dc-eb89-3daf-ebbd-dc2b689d94d5.htm" />
+        <HelpTOCNode Title="Metric Property " Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="50acf2b9-9e99-46f1-a0a4-1f8d2cd493af" Title="KNearestNeighbors(T) Methods" Url="html/75aa7f50-9381-ee6a-6120-bb5c143d8b88.htm">
+        <HelpTOCNode Title="Classify Method " Url="html/aef6a2b0-8a2f-119e-b4f7-094639b10149.htm" />
+        <HelpTOCNode Title="Train Method " Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
+        <HelpTOCNode Title="TrainAll Method " Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="a6f42a69-5b66-496d-ad00-76bba2d67ac3" Title="Supercluster.Clustering" Url="html/4f0a3301-2f54-bd00-13fc-08a81ac6dcbf.htm">
+    <HelpTOCNode Id="ebe7409e-2f34-4a1b-a7f2-c518d2fbc0e9" Title="EMeans(T) Class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm">
+      <HelpTOCNode Title="EMeans(T) Constructor " Url="html/d5b57abe-0732-4194-f908-9d78ae908905.htm" />
+      <HelpTOCNode Id="b5da79f6-7766-4049-b9c7-0062727641a1" Title="EMeans(T) Properties" Url="html/cc4d714c-47f7-5ab6-92b5-96fee68fd5d3.htm">
+        <HelpTOCNode Title="ClusterData Property " Url="html/36f48b91-63eb-b95a-46de-df2e08e6de37.htm" />
+        <HelpTOCNode Title="Clusters Property " Url="html/3465e763-992d-e8f7-52dd-7940bed599c1.htm" />
+        <HelpTOCNode Title="EqualityComparer Property " Url="html/bb435a05-09a5-160c-ef28-e33249322bcb.htm" />
+        <HelpTOCNode Title="K Property " Url="html/dbde735c-4333-685d-cc0e-1597a8ce3f7c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b02c51d4-730f-4dd5-8bbc-fb4b06e350ab" Title="EMeans(T) Methods" Url="html/55d8efb9-ccc6-d0ba-a0b1-e1e7079f51e4.htm">
+        <HelpTOCNode Title="Compute Method " Url="html/ff62cdb1-c6ac-4887-3612-8e12b80719d8.htm" />
+        <HelpTOCNode Title="ComputeClassStatistics Method " Url="html/3335b7c8-08ca-b827-e8d2-a03a4d819bd2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3cc8206c-3fc1-4518-8126-8f3e5d6ba861" Title="EMeans(T) Fields" Url="html/4c8c3546-9450-23f3-1038-3d29f292a9f3.htm">
+        <HelpTOCNode Title="ActualClusterMembershipMatrix Field" Url="html/ae9b7f8b-d0c7-8cf3-df4a-9c74c6d93266.htm" />
+        <HelpTOCNode Title="ClassStatistics Field" Url="html/db46d859-bf72-ff0c-8c10-d611d31e6870.htm" />
+        <HelpTOCNode Title="Data Field" Url="html/9d521289-6916-99e8-bcf9-54396898e487.htm" />
+        <HelpTOCNode Title="DistanceIndexMatrix Field" Url="html/523f4cdd-d05e-a82d-1b05-a2bae5bdf75c.htm" />
+        <HelpTOCNode Title="DistanceMatrix Field" Url="html/d4680c5b-93af-11c6-a786-a6599b061f12.htm" />
+        <HelpTOCNode Title="Metric Field" Url="html/c36b110b-0298-df83-093b-604a854a8f58.htm" />
+        <HelpTOCNode Title="NeighbourClusterMembershipMatrix Field" Url="html/6adb3d23-724b-506a-dba8-8969d709d15a.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d314300d-c716-4a89-834e-b37bc8dc2a47" Title="EMeans(T).MeasuredDistance Class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm">
+      <HelpTOCNode Title="EMeans(T).MeasuredDistance Constructor " Url="html/fea0f5c2-b73e-c93d-2572-7f40e4625949.htm" />
+      <HelpTOCNode Id="b2205e8d-b9cb-40bf-91c2-97e6bef6e594" Title="MeasuredDistance Properties" Url="html/49ac822d-7457-c3d8-8450-de089a4735ad.htm">
+        <HelpTOCNode Title="Distance Property " Url="html/c05b752a-b8e0-7ffb-da0f-48aa811e4204.htm" />
+        <HelpTOCNode Title="Index Property " Url="html/9238579d-0091-cad7-bca3-06bd615a1d1e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="54b722b5-38bd-4f9c-a3dc-4c4df458fa4d" Title="MeasuredDistance Methods" Url="html/32d934ab-cd26-9ca7-e074-fb198d30d81b.htm">
+        <HelpTOCNode Title="CompareTo Method " Url="html/c64cf7b3-f6cc-731a-788a-8270eb1f1b71.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="ed0deea1-68e7-4869-8a5f-7cb29ca5a404" Title="KMeans(T) Class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm">
+      <HelpTOCNode Title="KMeans(T) Constructor " Url="html/5ed6935f-6259-cd87-963e-13606bb57903.htm" />
+      <HelpTOCNode Id="4762a617-62b3-4d8c-a802-aa6c35ee15ee" Title="KMeans(T) Properties" Url="html/5f7f574b-d2cb-fc9e-65ae-a07c227428f8.htm">
+        <HelpTOCNode Title="Clusters Property " Url="html/4ff30dd9-343a-bd21-ee8c-643ab56eb308.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="41dcbea3-0d14-4a1f-bd72-8b098d2770fa" Title="KMeans(T) Methods" Url="html/06632c19-c8e7-34c8-f3f7-aa76993a394d.htm">
+        <HelpTOCNode Title="Compute Method " Url="html/2a5fee83-4b3e-eb07-fa84-62eb555251ef.htm" />
+        <HelpTOCNode Title="GetClusterData Method " Url="html/51632641-c500-5c85-b1fc-94d9456f06f3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="06407ced-d0a8-4eb4-9ac2-25b8cfc9624b" Title="KMeans(T) Fields" Url="html/31ef8ce0-921d-b0c1-a2f2-2333cdb480ed.htm">
+        <HelpTOCNode Title="CentralTendency Field" Url="html/b42ec6c0-3696-a3a4-8a1a-b1c606b01ac7.htm" />
+        <HelpTOCNode Title="Centroids Field" Url="html/21d63025-1620-4738-2381-aa3c7cf57881.htm" />
+        <HelpTOCNode Title="ClusterData Field" Url="html/05aa36bb-e44e-9d27-92fc-b6dbb23ee5bf.htm" />
+        <HelpTOCNode Title="ClusterLabels Field" Url="html/257f4265-8316-6865-4335-0ed15239ab26.htm" />
+        <HelpTOCNode Title="EqualityComparer Field" Url="html/ae57a112-ec75-71dd-1474-3ae197b77057.htm" />
+        <HelpTOCNode Title="Metric Field" Url="html/e669dba4-55e9-7e9a-11e4-6aaecaace3f2.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

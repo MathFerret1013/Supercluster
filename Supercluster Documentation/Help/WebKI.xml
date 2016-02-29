@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="ActualClusterMembershipMatrix field" Url="html/ae9b7f8b-d0c7-8cf3-df4a-9c74c6d93266.htm" />
+  <HelpKINode Title="Add method" Url="html/c9dc212a-c9be-133e-5963-682a92c3097b.htm" />
+  <HelpKINode Title="ArrayAdd method" Url="html/56c75396-18a1-866a-af67-6402952d4f5d.htm" />
+  <HelpKINode Title="ArrayDivide method" Url="html/18a587a7-6e68-2e7e-8253-90c724dec961.htm" />
+  <HelpKINode Title="ArraySubtract method" Url="html/958affe0-36ab-324b-9766-231ecf82c97c.htm" />
+  <HelpKINode Title="BijectWithNaturals method" Url="html/04fe849f-50f1-b6a6-d87c-6f64a2d1f18f.htm" />
+  <HelpKINode Title="CentralTendency field" Url="html/b42ec6c0-3696-a3a4-8a1a-b1c606b01ac7.htm" />
+  <HelpKINode Title="Centroids field" Url="html/21d63025-1620-4738-2381-aa3c7cf57881.htm" />
+  <HelpKINode Title="Classify method" Url="html/aef6a2b0-8a2f-119e-b4f7-094639b10149.htm" />
+  <HelpKINode Title="ClassLabel field" Url="html/6e5398bc-1f81-5643-1dfd-de0b40926fd1.htm" />
+  <HelpKINode Title="ClassStatistics field">
+    <HelpKINode Title="EMeans(T).ClassStatistics Field" Url="html/db46d859-bf72-ff0c-8c10-d611d31e6870.htm" />
+    <HelpKINode Title="ExtendedNearestNeighbors(T).ClassStatistics Field" Url="html/a5d85043-9aa6-2c91-8092-ef8c7bac7caf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClusterData field" Url="html/05aa36bb-e44e-9d27-92fc-b6dbb23ee5bf.htm" />
+  <HelpKINode Title="ClusterData property" Url="html/36f48b91-63eb-b95a-46de-df2e08e6de37.htm" />
+  <HelpKINode Title="ClusterLabels field" Url="html/257f4265-8316-6865-4335-0ed15239ab26.htm" />
+  <HelpKINode Title="Clusters property">
+    <HelpKINode Title="EMeans(T).Clusters Property " Url="html/3465e763-992d-e8f7-52dd-7940bed599c1.htm" />
+    <HelpKINode Title="ExtendedNearestNeighbors(T).Clusters Property " Url="html/daa1b48a-ba0e-2839-e8a9-c7de2248ff2f.htm" />
+    <HelpKINode Title="KMeans(T).Clusters Property " Url="html/4ff30dd9-343a-bd21-ee8c-643ab56eb308.htm" />
+    <HelpKINode Title="KNearestNeighbors(T).Clusters Property " Url="html/c6de9759-3c45-cef2-5ca9-cfd884f4ce7f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectionUtilities class">
+    <HelpKINode Title="CollectionUtilities Class" Url="html/83540b78-ba96-a747-becf-f93466a84010.htm" />
+    <HelpKINode Title="about CollectionUtilities class" Url="html/83540b78-ba96-a747-becf-f93466a84010.htm" />
+    <HelpKINode Title="methods" Url="html/97a78cc2-4b90-1a5a-1f54-66ee930c6fdd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CollectionUtilities.ArrayAdd method" Url="html/56c75396-18a1-866a-af67-6402952d4f5d.htm" />
+  <HelpKINode Title="CollectionUtilities.ArrayDivide method" Url="html/18a587a7-6e68-2e7e-8253-90c724dec961.htm" />
+  <HelpKINode Title="CollectionUtilities.ArraySubtract method" Url="html/958affe0-36ab-324b-9766-231ecf82c97c.htm" />
+  <HelpKINode Title="CollectionUtilities.BijectWithNaturals method" Url="html/04fe849f-50f1-b6a6-d87c-6f64a2d1f18f.htm" />
+  <HelpKINode Title="CollectionUtilities.FindAllIndex(Of T) method" Url="html/a0a418a6-8123-810b-ff00-7af56a873771.htm" />
+  <HelpKINode Title="CollectionUtilities.FindAllIndex&lt;T&gt; method" Url="html/a0a418a6-8123-810b-ff00-7af56a873771.htm" />
+  <HelpKINode Title="CollectionUtilities.GetColumn(Of T) method" Url="html/574a8a43-12d1-480c-2dd6-fb6aa5a5d583.htm" />
+  <HelpKINode Title="CollectionUtilities.GetColumn&lt;T&gt; method" Url="html/574a8a43-12d1-480c-2dd6-fb6aa5a5d583.htm" />
+  <HelpKINode Title="CollectionUtilities.GetRow(Of T) method" Url="html/a6576cd4-e77a-ebbb-fbe5-38b60e0a80ca.htm" />
+  <HelpKINode Title="CollectionUtilities.GetRow&lt;T&gt; method" Url="html/a6576cd4-e77a-ebbb-fbe5-38b60e0a80ca.htm" />
+  <HelpKINode Title="CollectionUtilities.MaxIndex method" Url="html/871900b9-c650-a499-bfe7-fe1b0c405b33.htm" />
+  <HelpKINode Title="CollectionUtilities.MaxIndexRandomTies method" Url="html/e6b22b2b-79d8-6a07-df9e-48f3ddc64cda.htm" />
+  <HelpKINode Title="CollectionUtilities.MinIndex method" Url="html/3bf90c70-9733-232a-8990-ff4eaa8439bd.htm" />
+  <HelpKINode Title="CollectionUtilities.Mode method" Url="html/0d9762e1-4eca-ea98-4789-5cb2a7dc06b2.htm" />
+  <HelpKINode Title="CollectionUtilities.SetAllElements(Of T) method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
+  <HelpKINode Title="CollectionUtilities.SetAllElements&lt;T&gt; method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
+  <HelpKINode Title="CollectionUtilities.SetColumn(Of T) method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
+  <HelpKINode Title="CollectionUtilities.SetColumn&lt;T&gt; method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
+  <HelpKINode Title="CollectionUtilities.SetRow(Of T) method" Url="html/23b6697a-1884-447a-17a8-a36965cd0565.htm" />
+  <HelpKINode Title="CollectionUtilities.SetRow&lt;T&gt; method" Url="html/23b6697a-1884-447a-17a8-a36965cd0565.htm" />
+  <HelpKINode Title="CollectionUtilities.SubsetByIndex method" Url="html/b7788941-44bc-d39c-d36b-3bf97d0e40ee.htm" />
+  <HelpKINode Title="CompareTo method">
+    <HelpKINode Title="EMeans(T).MeasuredDistance.CompareTo Method " Url="html/c64cf7b3-f6cc-731a-788a-8270eb1f1b71.htm" />
+    <HelpKINode Title="NearestNeighborPoint(T).CompareTo Method " Url="html/9fba2b16-edf1-83be-4bb2-0b34737a86cb.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Compute method">
+    <HelpKINode Title="EMeans(T).Compute Method " Url="html/ff62cdb1-c6ac-4887-3612-8e12b80719d8.htm" />
+    <HelpKINode Title="ExtendedNearestNeighbors(T).Compute Method " Url="html/4f9981a7-c3e0-e72f-6bdb-7df594644392.htm" />
+    <HelpKINode Title="ISupervisedClassifier(T).Compute Method " Url="html/ee75a2cb-3ac4-11e1-b433-d11f33f63af1.htm" />
+    <HelpKINode Title="KMeans(T).Compute Method " Url="html/2a5fee83-4b3e-eb07-fa84-62eb555251ef.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComputeClassStatistics method" Url="html/3335b7c8-08ca-b827-e8d2-a03a4d819bd2.htm" />
+  <HelpKINode Title="Data field" Url="html/9d521289-6916-99e8-bcf9-54396898e487.htm" />
+  <HelpKINode Title="Distance field" Url="html/0d204d9c-5760-e809-46b2-b3d3d689149d.htm" />
+  <HelpKINode Title="Distance property" Url="html/c05b752a-b8e0-7ffb-da0f-48aa811e4204.htm" />
+  <HelpKINode Title="DistanceIndexMatrix field" Url="html/523f4cdd-d05e-a82d-1b05-a2bae5bdf75c.htm" />
+  <HelpKINode Title="DistanceMatrix field" Url="html/d4680c5b-93af-11c6-a786-a6599b061f12.htm" />
+  <HelpKINode Title="DoubleArrayEqualityComparer class">
+    <HelpKINode Title="DoubleArrayEqualityComparer Class" Url="html/62a980d9-99f7-4a86-5de2-de6c7ae3ceb0.htm" />
+    <HelpKINode Title="about DoubleArrayEqualityComparer class" Url="html/62a980d9-99f7-4a86-5de2-de6c7ae3ceb0.htm" />
+    <HelpKINode Title="constructor" Url="html/47d0a3e9-620b-bc6e-228c-f1489be88791.htm" />
+    <HelpKINode Title="methods" Url="html/380b2b09-6840-9b1b-adb7-b11b48ecbd15.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoubleArrayEqualityComparer.DoubleArrayEqualityComparer constructor" Url="html/47d0a3e9-620b-bc6e-228c-f1489be88791.htm" />
+  <HelpKINode Title="DoubleArrayEqualityComparer.Equals method" Url="html/926e443e-40b8-6a32-a78f-42dccd7c4913.htm" />
+  <HelpKINode Title="DoubleArrayEqualityComparer.GetHashCode method" Url="html/7ce456dc-d168-d375-287f-071b33d870d8.htm" />
+  <HelpKINode Title="DoubleEqualityComparer class">
+    <HelpKINode Title="DoubleEqualityComparer Class" Url="html/985102d6-61ad-f136-bf95-9ca7e8a161bd.htm" />
+    <HelpKINode Title="about DoubleEqualityComparer class" Url="html/985102d6-61ad-f136-bf95-9ca7e8a161bd.htm" />
+    <HelpKINode Title="constructor" Url="html/0b8520f8-12f7-258e-a579-a78eeec9a9c8.htm" />
+    <HelpKINode Title="methods" Url="html/00f4030a-5c5c-61a0-9f8d-5a721eac8412.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoubleEqualityComparer.DoubleEqualityComparer constructor" Url="html/0b8520f8-12f7-258e-a579-a78eeec9a9c8.htm" />
+  <HelpKINode Title="DoubleEqualityComparer.Equals method" Url="html/efe27537-75c9-7f52-44df-5c2dc9bba3d3.htm" />
+  <HelpKINode Title="DoubleEqualityComparer.GetHashCode method" Url="html/71971459-f604-38f1-55ee-d555a0db1dcc.htm" />
+  <HelpKINode Title="DOUBLE_TOLERANCE field" Url="html/4ab1ccce-054d-1a4b-1436-721e531eb69e.htm" />
+  <HelpKINode Title="EMeans(Of T) class">
+    <HelpKINode Title="EMeans(T) Class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+    <HelpKINode Title="about EMeans(Of T) class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+    <HelpKINode Title="constructor" Url="html/d5b57abe-0732-4194-f908-9d78ae908905.htm" />
+    <HelpKINode Title="fields" Url="html/4c8c3546-9450-23f3-1038-3d29f292a9f3.htm" />
+    <HelpKINode Title="methods" Url="html/55d8efb9-ccc6-d0ba-a0b1-e1e7079f51e4.htm" />
+    <HelpKINode Title="properties" Url="html/cc4d714c-47f7-5ab6-92b5-96fee68fd5d3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EMeans(Of T).ActualClusterMembershipMatrix field" Url="html/ae9b7f8b-d0c7-8cf3-df4a-9c74c6d93266.htm" />
+  <HelpKINode Title="EMeans(Of T).ClassStatistics field" Url="html/db46d859-bf72-ff0c-8c10-d611d31e6870.htm" />
+  <HelpKINode Title="EMeans(Of T).ClusterData property" Url="html/36f48b91-63eb-b95a-46de-df2e08e6de37.htm" />
+  <HelpKINode Title="EMeans(Of T).Clusters property" Url="html/3465e763-992d-e8f7-52dd-7940bed599c1.htm" />
+  <HelpKINode Title="EMeans(Of T).Compute method" Url="html/ff62cdb1-c6ac-4887-3612-8e12b80719d8.htm" />
+  <HelpKINode Title="EMeans(Of T).ComputeClassStatistics method" Url="html/3335b7c8-08ca-b827-e8d2-a03a4d819bd2.htm" />
+  <HelpKINode Title="EMeans(Of T).Data field" Url="html/9d521289-6916-99e8-bcf9-54396898e487.htm" />
+  <HelpKINode Title="EMeans(Of T).DistanceIndexMatrix field" Url="html/523f4cdd-d05e-a82d-1b05-a2bae5bdf75c.htm" />
+  <HelpKINode Title="EMeans(Of T).DistanceMatrix field" Url="html/d4680c5b-93af-11c6-a786-a6599b061f12.htm" />
+  <HelpKINode Title="EMeans(Of T).EMeans constructor" Url="html/d5b57abe-0732-4194-f908-9d78ae908905.htm" />
+  <HelpKINode Title="EMeans(Of T).EqualityComparer property" Url="html/bb435a05-09a5-160c-ef28-e33249322bcb.htm" />
+  <HelpKINode Title="EMeans(Of T).K property" Url="html/dbde735c-4333-685d-cc0e-1597a8ce3f7c.htm" />
+  <HelpKINode Title="EMeans(Of T).MeasuredDistance class">
+    <HelpKINode Title="EMeans(T).MeasuredDistance Class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+    <HelpKINode Title="about EMeans(Of T).MeasuredDistance class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+    <HelpKINode Title="constructor" Url="html/fea0f5c2-b73e-c93d-2572-7f40e4625949.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EMeans(Of T).MeasuredDistance.CompareTo method" Url="html/c64cf7b3-f6cc-731a-788a-8270eb1f1b71.htm" />
+  <HelpKINode Title="EMeans(Of T).MeasuredDistance.Distance property" Url="html/c05b752a-b8e0-7ffb-da0f-48aa811e4204.htm" />
+  <HelpKINode Title="EMeans(Of T).MeasuredDistance.Index property" Url="html/9238579d-0091-cad7-bca3-06bd615a1d1e.htm" />
+  <HelpKINode Title="EMeans(Of T).MeasuredDistance.MeasuredDistance constructor" Url="html/fea0f5c2-b73e-c93d-2572-7f40e4625949.htm" />
+  <HelpKINode Title="EMeans(Of T).Metric field" Url="html/c36b110b-0298-df83-093b-604a854a8f58.htm" />
+  <HelpKINode Title="EMeans(Of T).NeighbourClusterMembershipMatrix field" Url="html/6adb3d23-724b-506a-dba8-8969d709d15a.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt; class">
+    <HelpKINode Title="EMeans(T) Class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+    <HelpKINode Title="about EMeans&lt;T&gt; class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+    <HelpKINode Title="constructor" Url="html/d5b57abe-0732-4194-f908-9d78ae908905.htm" />
+    <HelpKINode Title="fields" Url="html/4c8c3546-9450-23f3-1038-3d29f292a9f3.htm" />
+    <HelpKINode Title="methods" Url="html/55d8efb9-ccc6-d0ba-a0b1-e1e7079f51e4.htm" />
+    <HelpKINode Title="properties" Url="html/cc4d714c-47f7-5ab6-92b5-96fee68fd5d3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EMeans&lt;T&gt;.ActualClusterMembershipMatrix field" Url="html/ae9b7f8b-d0c7-8cf3-df4a-9c74c6d93266.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.ClassStatistics field" Url="html/db46d859-bf72-ff0c-8c10-d611d31e6870.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.ClusterData property" Url="html/36f48b91-63eb-b95a-46de-df2e08e6de37.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.Clusters property" Url="html/3465e763-992d-e8f7-52dd-7940bed599c1.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.Compute method" Url="html/ff62cdb1-c6ac-4887-3612-8e12b80719d8.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.ComputeClassStatistics method" Url="html/3335b7c8-08ca-b827-e8d2-a03a4d819bd2.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.Data field" Url="html/9d521289-6916-99e8-bcf9-54396898e487.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.DistanceIndexMatrix field" Url="html/523f4cdd-d05e-a82d-1b05-a2bae5bdf75c.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.DistanceMatrix field" Url="html/d4680c5b-93af-11c6-a786-a6599b061f12.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.EMeans constructor" Url="html/d5b57abe-0732-4194-f908-9d78ae908905.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.EqualityComparer property" Url="html/bb435a05-09a5-160c-ef28-e33249322bcb.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.K property" Url="html/dbde735c-4333-685d-cc0e-1597a8ce3f7c.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.MeasuredDistance class">
+    <HelpKINode Title="EMeans(T).MeasuredDistance Class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+    <HelpKINode Title="about EMeans&lt;T&gt;.MeasuredDistance class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+    <HelpKINode Title="constructor" Url="html/fea0f5c2-b73e-c93d-2572-7f40e4625949.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EMeans&lt;T&gt;.MeasuredDistance.CompareTo method" Url="html/c64cf7b3-f6cc-731a-788a-8270eb1f1b71.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.MeasuredDistance.Distance property" Url="html/c05b752a-b8e0-7ffb-da0f-48aa811e4204.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.MeasuredDistance.Index property" Url="html/9238579d-0091-cad7-bca3-06bd615a1d1e.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.MeasuredDistance.MeasuredDistance constructor" Url="html/fea0f5c2-b73e-c93d-2572-7f40e4625949.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.Metric field" Url="html/c36b110b-0298-df83-093b-604a854a8f58.htm" />
+  <HelpKINode Title="EMeans&lt;T&gt;.NeighbourClusterMembershipMatrix field" Url="html/6adb3d23-724b-506a-dba8-8969d709d15a.htm" />
+  <HelpKINode Title="EqualityComparer field" Url="html/ae57a112-ec75-71dd-1474-3ae197b77057.htm" />
+  <HelpKINode Title="EqualityComparer property" Url="html/bb435a05-09a5-160c-ef28-e33249322bcb.htm" />
+  <HelpKINode Title="Equals method">
+    <HelpKINode Title="DoubleArrayEqualityComparer.Equals Method " Url="html/926e443e-40b8-6a32-a78f-42dccd7c4913.htm" />
+    <HelpKINode Title="DoubleEqualityComparer.Equals Method " Url="html/efe27537-75c9-7f52-44df-5c2dc9bba3d3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T) class">
+    <HelpKINode Title="ExtendedNearestNeighbors(T) Class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+    <HelpKINode Title="about ExtendedNearestNeighbors(Of T) class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+    <HelpKINode Title="constructor" Url="html/343f3177-3229-8d87-417d-3e9a182c9791.htm" />
+    <HelpKINode Title="fields" Url="html/8a4d3a11-c461-53af-f93f-245cd969f1a4.htm" />
+    <HelpKINode Title="methods" Url="html/ee6b35da-47ed-44b1-e319-4d93064240c9.htm" />
+    <HelpKINode Title="properties" Url="html/a0ace3db-4d33-35fb-41bc-f9ba660fd620.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).ClassStatistics field" Url="html/a5d85043-9aa6-2c91-8092-ef8c7bac7caf.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).Clusters property" Url="html/daa1b48a-ba0e-2839-e8a9-c7de2248ff2f.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).Compute method" Url="html/4f9981a7-c3e0-e72f-6bdb-7df594644392.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).ExtendedNearestNeighbors constructor" Url="html/343f3177-3229-8d87-417d-3e9a182c9791.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).K property" Url="html/f8696529-656f-b898-1e5c-bb6d60a98ad1.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).Metric property" Url="html/43305f7d-b30a-3306-c5a3-afb0ab308e87.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).Predict method" Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).Train method" Url="html/b3533473-ed0f-5494-6424-47d2e5ba2787.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).WeightedKNNDistance field" Url="html/bf6517d0-fa57-3f0a-82cc-eaf2e0cec74c.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors(Of T).WeightedKNNLabels field" Url="html/1b9f01d5-8acf-0f8e-6bf6-50d33231d313.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt; class">
+    <HelpKINode Title="ExtendedNearestNeighbors(T) Class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+    <HelpKINode Title="about ExtendedNearestNeighbors&lt;T&gt; class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+    <HelpKINode Title="constructor" Url="html/343f3177-3229-8d87-417d-3e9a182c9791.htm" />
+    <HelpKINode Title="fields" Url="html/8a4d3a11-c461-53af-f93f-245cd969f1a4.htm" />
+    <HelpKINode Title="methods" Url="html/ee6b35da-47ed-44b1-e319-4d93064240c9.htm" />
+    <HelpKINode Title="properties" Url="html/a0ace3db-4d33-35fb-41bc-f9ba660fd620.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.ClassStatistics field" Url="html/a5d85043-9aa6-2c91-8092-ef8c7bac7caf.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.Clusters property" Url="html/daa1b48a-ba0e-2839-e8a9-c7de2248ff2f.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.Compute method" Url="html/4f9981a7-c3e0-e72f-6bdb-7df594644392.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.ExtendedNearestNeighbors constructor" Url="html/343f3177-3229-8d87-417d-3e9a182c9791.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.K property" Url="html/f8696529-656f-b898-1e5c-bb6d60a98ad1.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.Metric property" Url="html/43305f7d-b30a-3306-c5a3-afb0ab308e87.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.Predict method" Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.Train method" Url="html/b3533473-ed0f-5494-6424-47d2e5ba2787.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.WeightedKNNDistance field" Url="html/bf6517d0-fa57-3f0a-82cc-eaf2e0cec74c.htm" />
+  <HelpKINode Title="ExtendedNearestNeighbors&lt;T&gt;.WeightedKNNLabels field" Url="html/1b9f01d5-8acf-0f8e-6bf6-50d33231d313.htm" />
+  <HelpKINode Title="FindAllIndex(Of T) method" Url="html/a0a418a6-8123-810b-ff00-7af56a873771.htm" />
+  <HelpKINode Title="FindAllIndex&lt;T&gt; method" Url="html/a0a418a6-8123-810b-ff00-7af56a873771.htm" />
+  <HelpKINode Title="GetClusterData method" Url="html/51632641-c500-5c85-b1fc-94d9456f06f3.htm" />
+  <HelpKINode Title="GetColumn(Of T) method" Url="html/574a8a43-12d1-480c-2dd6-fb6aa5a5d583.htm" />
+  <HelpKINode Title="GetColumn&lt;T&gt; method" Url="html/574a8a43-12d1-480c-2dd6-fb6aa5a5d583.htm" />
+  <HelpKINode Title="GetHashCode method">
+    <HelpKINode Title="DoubleArrayEqualityComparer.GetHashCode Method " Url="html/7ce456dc-d168-d375-287f-071b33d870d8.htm" />
+    <HelpKINode Title="DoubleEqualityComparer.GetHashCode Method " Url="html/71971459-f604-38f1-55ee-d555a0db1dcc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetRow(Of T) method" Url="html/a6576cd4-e77a-ebbb-fbe5-38b60e0a80ca.htm" />
+  <HelpKINode Title="GetRow&lt;T&gt; method" Url="html/a6576cd4-e77a-ebbb-fbe5-38b60e0a80ca.htm" />
+  <HelpKINode Title="Index property" Url="html/9238579d-0091-cad7-bca3-06bd615a1d1e.htm" />
+  <HelpKINode Title="ISupervisedClassifier(Of T) interface">
+    <HelpKINode Title="ISupervisedClassifier(T) Interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+    <HelpKINode Title="about ISupervisedClassifier(Of T) interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+    <HelpKINode Title="methods" Url="html/dbf38c56-3235-e99c-4f65-54833ef39293.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISupervisedClassifier(Of T).Compute method" Url="html/ee75a2cb-3ac4-11e1-b433-d11f33f63af1.htm" />
+  <HelpKINode Title="ISupervisedClassifier(Of T).Train method" Url="html/f7dbaec3-6bcf-f588-e884-a1f8f6c1690b.htm" />
+  <HelpKINode Title="ISupervisedClassifier&lt;T&gt; interface">
+    <HelpKINode Title="ISupervisedClassifier(T) Interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+    <HelpKINode Title="about ISupervisedClassifier&lt;T&gt; interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+    <HelpKINode Title="methods" Url="html/dbf38c56-3235-e99c-4f65-54833ef39293.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISupervisedClassifier&lt;T&gt;.Compute method" Url="html/ee75a2cb-3ac4-11e1-b433-d11f33f63af1.htm" />
+  <HelpKINode Title="ISupervisedClassifier&lt;T&gt;.Train method" Url="html/f7dbaec3-6bcf-f588-e884-a1f8f6c1690b.htm" />
+  <HelpKINode Title="Item property" Url="html/306e1054-1ddf-7d67-ce90-f81e8d928b90.htm" />
+  <HelpKINode Title="K property">
+    <HelpKINode Title="EMeans(T).K Property " Url="html/dbde735c-4333-685d-cc0e-1597a8ce3f7c.htm" />
+    <HelpKINode Title="ExtendedNearestNeighbors(T).K Property " Url="html/f8696529-656f-b898-1e5c-bb6d60a98ad1.htm" />
+    <HelpKINode Title="KNearestNeighbors(T).K Property " Url="html/9d2df5dc-eb89-3daf-ebbd-dc2b689d94d5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KMeans(Of T) class">
+    <HelpKINode Title="KMeans(T) Class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+    <HelpKINode Title="about KMeans(Of T) class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+    <HelpKINode Title="constructor" Url="html/5ed6935f-6259-cd87-963e-13606bb57903.htm" />
+    <HelpKINode Title="fields" Url="html/31ef8ce0-921d-b0c1-a2f2-2333cdb480ed.htm" />
+    <HelpKINode Title="methods" Url="html/06632c19-c8e7-34c8-f3f7-aa76993a394d.htm" />
+    <HelpKINode Title="properties" Url="html/5f7f574b-d2cb-fc9e-65ae-a07c227428f8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KMeans(Of T).CentralTendency field" Url="html/b42ec6c0-3696-a3a4-8a1a-b1c606b01ac7.htm" />
+  <HelpKINode Title="KMeans(Of T).Centroids field" Url="html/21d63025-1620-4738-2381-aa3c7cf57881.htm" />
+  <HelpKINode Title="KMeans(Of T).ClusterData field" Url="html/05aa36bb-e44e-9d27-92fc-b6dbb23ee5bf.htm" />
+  <HelpKINode Title="KMeans(Of T).ClusterLabels field" Url="html/257f4265-8316-6865-4335-0ed15239ab26.htm" />
+  <HelpKINode Title="KMeans(Of T).Clusters property" Url="html/4ff30dd9-343a-bd21-ee8c-643ab56eb308.htm" />
+  <HelpKINode Title="KMeans(Of T).Compute method" Url="html/2a5fee83-4b3e-eb07-fa84-62eb555251ef.htm" />
+  <HelpKINode Title="KMeans(Of T).EqualityComparer field" Url="html/ae57a112-ec75-71dd-1474-3ae197b77057.htm" />
+  <HelpKINode Title="KMeans(Of T).GetClusterData method" Url="html/51632641-c500-5c85-b1fc-94d9456f06f3.htm" />
+  <HelpKINode Title="KMeans(Of T).KMeans constructor" Url="html/5ed6935f-6259-cd87-963e-13606bb57903.htm" />
+  <HelpKINode Title="KMeans(Of T).Metric field" Url="html/e669dba4-55e9-7e9a-11e4-6aaecaace3f2.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt; class">
+    <HelpKINode Title="KMeans(T) Class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+    <HelpKINode Title="about KMeans&lt;T&gt; class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+    <HelpKINode Title="constructor" Url="html/5ed6935f-6259-cd87-963e-13606bb57903.htm" />
+    <HelpKINode Title="fields" Url="html/31ef8ce0-921d-b0c1-a2f2-2333cdb480ed.htm" />
+    <HelpKINode Title="methods" Url="html/06632c19-c8e7-34c8-f3f7-aa76993a394d.htm" />
+    <HelpKINode Title="properties" Url="html/5f7f574b-d2cb-fc9e-65ae-a07c227428f8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KMeans&lt;T&gt;.CentralTendency field" Url="html/b42ec6c0-3696-a3a4-8a1a-b1c606b01ac7.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.Centroids field" Url="html/21d63025-1620-4738-2381-aa3c7cf57881.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.ClusterData field" Url="html/05aa36bb-e44e-9d27-92fc-b6dbb23ee5bf.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.ClusterLabels field" Url="html/257f4265-8316-6865-4335-0ed15239ab26.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.Clusters property" Url="html/4ff30dd9-343a-bd21-ee8c-643ab56eb308.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.Compute method" Url="html/2a5fee83-4b3e-eb07-fa84-62eb555251ef.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.EqualityComparer field" Url="html/ae57a112-ec75-71dd-1474-3ae197b77057.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.GetClusterData method" Url="html/51632641-c500-5c85-b1fc-94d9456f06f3.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.KMeans constructor" Url="html/5ed6935f-6259-cd87-963e-13606bb57903.htm" />
+  <HelpKINode Title="KMeans&lt;T&gt;.Metric field" Url="html/e669dba4-55e9-7e9a-11e4-6aaecaace3f2.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T) class">
+    <HelpKINode Title="KNearestNeighbors(T) Class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+    <HelpKINode Title="about KNearestNeighbors(Of T) class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+    <HelpKINode Title="constructor" Url="html/fe091b67-a834-d8ad-795a-f4a5ffe9edf8.htm" />
+    <HelpKINode Title="methods" Url="html/75aa7f50-9381-ee6a-6120-bb5c143d8b88.htm" />
+    <HelpKINode Title="properties" Url="html/23985790-5472-af87-08bb-deedb8ae99d5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KNearestNeighbors(Of T).Classify method" Url="html/aef6a2b0-8a2f-119e-b4f7-094639b10149.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).Clusters property" Url="html/c6de9759-3c45-cef2-5ca9-cfd884f4ce7f.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).K property" Url="html/9d2df5dc-eb89-3daf-ebbd-dc2b689d94d5.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).KNearestNeighbors constructor" Url="html/fe091b67-a834-d8ad-795a-f4a5ffe9edf8.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).Metric property" Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).Train method" Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
+  <HelpKINode Title="KNearestNeighbors(Of T).TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt; class">
+    <HelpKINode Title="KNearestNeighbors(T) Class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+    <HelpKINode Title="about KNearestNeighbors&lt;T&gt; class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+    <HelpKINode Title="constructor" Url="html/fe091b67-a834-d8ad-795a-f4a5ffe9edf8.htm" />
+    <HelpKINode Title="methods" Url="html/75aa7f50-9381-ee6a-6120-bb5c143d8b88.htm" />
+    <HelpKINode Title="properties" Url="html/23985790-5472-af87-08bb-deedb8ae99d5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Classify method" Url="html/aef6a2b0-8a2f-119e-b4f7-094639b10149.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Clusters property" Url="html/c6de9759-3c45-cef2-5ca9-cfd884f4ce7f.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.K property" Url="html/9d2df5dc-eb89-3daf-ebbd-dc2b689d94d5.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.KNearestNeighbors constructor" Url="html/fe091b67-a834-d8ad-795a-f4a5ffe9edf8.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Metric property" Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Train method" Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
+  <HelpKINode Title="KNearestNeighbors&lt;T&gt;.TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="MaximallyDistantPoints(Of T) method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
+  <HelpKINode Title="MaximallyDistantPoints&lt;T&gt; method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
+  <HelpKINode Title="MaxIndex method" Url="html/871900b9-c650-a499-bfe7-fe1b0c405b33.htm" />
+  <HelpKINode Title="MaxIndexRandomTies method" Url="html/e6b22b2b-79d8-6a07-df9e-48f3ddc64cda.htm" />
+  <HelpKINode Title="MeasuredDistance class">
+    <HelpKINode Title="methods" Url="html/32d934ab-cd26-9ca7-e074-fb198d30d81b.htm" />
+    <HelpKINode Title="properties" Url="html/49ac822d-7457-c3d8-8450-de089a4735ad.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Metric field">
+    <HelpKINode Title="EMeans(T).Metric Field" Url="html/c36b110b-0298-df83-093b-604a854a8f58.htm" />
+    <HelpKINode Title="KMeans(T).Metric Field" Url="html/e669dba4-55e9-7e9a-11e4-6aaecaace3f2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Metric property">
+    <HelpKINode Title="ExtendedNearestNeighbors(T).Metric Property " Url="html/43305f7d-b30a-3306-c5a3-afb0ab308e87.htm" />
+    <HelpKINode Title="KNearestNeighbors(T).Metric Property " Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MinIndex method" Url="html/3bf90c70-9733-232a-8990-ff4eaa8439bd.htm" />
+  <HelpKINode Title="Mode method" Url="html/0d9762e1-4eca-ea98-4789-5cb2a7dc06b2.htm" />
+  <HelpKINode Title="MostDistantPoints class">
+    <HelpKINode Title="MostDistantPoints Class" Url="html/8e9f1125-f8c1-c7da-a12d-02cdc06630cb.htm" />
+    <HelpKINode Title="about MostDistantPoints class" Url="html/8e9f1125-f8c1-c7da-a12d-02cdc06630cb.htm" />
+    <HelpKINode Title="methods" Url="html/386c181b-c4d9-95fb-bc85-6d1be7494319.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MostDistantPoints.MaximallyDistantPoints(Of T) method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
+  <HelpKINode Title="MostDistantPoints.MaximallyDistantPoints&lt;T&gt; method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
+  <HelpKINode Title="NearestNeighborPoint(Of T) structure">
+    <HelpKINode Title="NearestNeighborPoint(T) Structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+    <HelpKINode Title="about NearestNeighborPoint(Of T) structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+    <HelpKINode Title="constructor" Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
+    <HelpKINode Title="fields" Url="html/63341455-043f-5bfe-21c9-5f9b06374611.htm" />
+    <HelpKINode Title="methods" Url="html/7fb3cb75-00c7-7d1c-c56c-60c424eb3696.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NearestNeighborPoint(Of T).ClassLabel field" Url="html/6e5398bc-1f81-5643-1dfd-de0b40926fd1.htm" />
+  <HelpKINode Title="NearestNeighborPoint(Of T).CompareTo method" Url="html/9fba2b16-edf1-83be-4bb2-0b34737a86cb.htm" />
+  <HelpKINode Title="NearestNeighborPoint(Of T).Distance field" Url="html/0d204d9c-5760-e809-46b2-b3d3d689149d.htm" />
+  <HelpKINode Title="NearestNeighborPoint(Of T).NearestNeighborPoint constructor" Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
+  <HelpKINode Title="NearestNeighborPoint(Of T).point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt; structure">
+    <HelpKINode Title="NearestNeighborPoint(T) Structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+    <HelpKINode Title="about NearestNeighborPoint&lt;T&gt; structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+    <HelpKINode Title="constructor" Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
+    <HelpKINode Title="fields" Url="html/63341455-043f-5bfe-21c9-5f9b06374611.htm" />
+    <HelpKINode Title="methods" Url="html/7fb3cb75-00c7-7d1c-c56c-60c424eb3696.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.ClassLabel field" Url="html/6e5398bc-1f81-5643-1dfd-de0b40926fd1.htm" />
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.CompareTo method" Url="html/9fba2b16-edf1-83be-4bb2-0b34737a86cb.htm" />
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.Distance field" Url="html/0d204d9c-5760-e809-46b2-b3d3d689149d.htm" />
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.NearestNeighborPoint constructor" Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
+  <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
+  <HelpKINode Title="NeighbourClusterMembershipMatrix field" Url="html/6adb3d23-724b-506a-dba8-8969d709d15a.htm" />
+  <HelpKINode Title="point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
+  <HelpKINode Title="Predict method" Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
+  <HelpKINode Title="SetAllElements(Of T) method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
+  <HelpKINode Title="SetAllElements&lt;T&gt; method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
+  <HelpKINode Title="SetColumn(Of T) method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
+  <HelpKINode Title="SetColumn&lt;T&gt; method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
+  <HelpKINode Title="SetRow(Of T) method" Url="html/23b6697a-1884-447a-17a8-a36965cd0565.htm" />
+  <HelpKINode Title="SetRow&lt;T&gt; method" Url="html/23b6697a-1884-447a-17a8-a36965cd0565.htm" />
+  <HelpKINode Title="SortedArray(Of T) class">
+    <HelpKINode Title="SortedArray(T) Class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+    <HelpKINode Title="about SortedArray(Of T) class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+    <HelpKINode Title="constructor" Url="html/5c2b8a31-36c4-d73a-6f52-51ae7640a31d.htm" />
+    <HelpKINode Title="methods" Url="html/da953547-75aa-e00e-54b5-aedf7eb8c073.htm" />
+    <HelpKINode Title="properties" Url="html/afce46ed-45b5-daf1-1f72-c6a9e75c65c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SortedArray(Of T).Add method" Url="html/c9dc212a-c9be-133e-5963-682a92c3097b.htm" />
+  <HelpKINode Title="SortedArray(Of T).Item property" Url="html/306e1054-1ddf-7d67-ce90-f81e8d928b90.htm" />
+  <HelpKINode Title="SortedArray(Of T).SortedArray constructor" Url="html/5c2b8a31-36c4-d73a-6f52-51ae7640a31d.htm" />
+  <HelpKINode Title="SortedArray&lt;T&gt; class">
+    <HelpKINode Title="SortedArray(T) Class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+    <HelpKINode Title="about SortedArray&lt;T&gt; class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+    <HelpKINode Title="constructor" Url="html/5c2b8a31-36c4-d73a-6f52-51ae7640a31d.htm" />
+    <HelpKINode Title="methods" Url="html/da953547-75aa-e00e-54b5-aedf7eb8c073.htm" />
+    <HelpKINode Title="properties" Url="html/afce46ed-45b5-daf1-1f72-c6a9e75c65c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SortedArray&lt;T&gt;.Add method" Url="html/c9dc212a-c9be-133e-5963-682a92c3097b.htm" />
+  <HelpKINode Title="SortedArray&lt;T&gt;.Item property" Url="html/306e1054-1ddf-7d67-ce90-f81e8d928b90.htm" />
+  <HelpKINode Title="SortedArray&lt;T&gt;.SortedArray constructor" Url="html/5c2b8a31-36c4-d73a-6f52-51ae7640a31d.htm" />
+  <HelpKINode Title="SubsetByIndex method" Url="html/b7788941-44bc-d39c-d36b-3bf97d0e40ee.htm" />
+  <HelpKINode Title="Supercluster namespace" Url="html/1cad8578-9813-ec0d-b78d-321c3e8720d1.htm" />
+  <HelpKINode Title="Supercluster.Algorithms namespace" Url="html/e08ed7cb-be1e-820e-b84b-a78b34f13817.htm" />
+  <HelpKINode Title="Supercluster.Algorithms.MostDistantPoints class" Url="html/8e9f1125-f8c1-c7da-a12d-02cdc06630cb.htm" />
+  <HelpKINode Title="Supercluster.Classification namespace" Url="html/04d1386f-01bd-469a-6cd1-b1d7fdf71313.htm" />
+  <HelpKINode Title="Supercluster.Classification.ExtendedNearestNeighbors(Of T) class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+  <HelpKINode Title="Supercluster.Classification.ExtendedNearestNeighbors&lt;T&gt; class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
+  <HelpKINode Title="Supercluster.Classification.ISupervisedClassifier(Of T) interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+  <HelpKINode Title="Supercluster.Classification.ISupervisedClassifier&lt;T&gt; interface" Url="html/110c025f-b171-1000-fe11-489c21bb8ba7.htm" />
+  <HelpKINode Title="Supercluster.Classification.KNearestNeighbors(Of T) class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+  <HelpKINode Title="Supercluster.Classification.KNearestNeighbors&lt;T&gt; class" Url="html/cf369d9b-960c-5b14-e3ad-fc9e80e96143.htm" />
+  <HelpKINode Title="Supercluster.Clustering namespace" Url="html/4f0a3301-2f54-bd00-13fc-08a81ac6dcbf.htm" />
+  <HelpKINode Title="Supercluster.Clustering.EMeans(Of T) class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+  <HelpKINode Title="Supercluster.Clustering.EMeans(Of T).MeasuredDistance class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+  <HelpKINode Title="Supercluster.Clustering.EMeans&lt;T&gt; class" Url="html/b6a0b4b8-1019-b917-59e1-b7c45ba471a5.htm" />
+  <HelpKINode Title="Supercluster.Clustering.EMeans&lt;T&gt;.MeasuredDistance class" Url="html/2507fba3-c453-3440-e7ea-9c8146aecf65.htm" />
+  <HelpKINode Title="Supercluster.Clustering.KMeans(Of T) class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+  <HelpKINode Title="Supercluster.Clustering.KMeans&lt;T&gt; class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
+  <HelpKINode Title="Supercluster.CollectionUtilities class" Url="html/83540b78-ba96-a747-becf-f93466a84010.htm" />
+  <HelpKINode Title="Supercluster.DoubleArrayEqualityComparer class" Url="html/62a980d9-99f7-4a86-5de2-de6c7ae3ceb0.htm" />
+  <HelpKINode Title="Supercluster.DoubleEqualityComparer class" Url="html/985102d6-61ad-f136-bf95-9ca7e8a161bd.htm" />
+  <HelpKINode Title="Supercluster.NearestNeighborPoint(Of T) structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+  <HelpKINode Title="Supercluster.NearestNeighborPoint&lt;T&gt; structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
+  <HelpKINode Title="Supercluster.SortedArray(Of T) class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+  <HelpKINode Title="Supercluster.SortedArray&lt;T&gt; class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
+  <HelpKINode Title="Supercluster.SuperclusterContants class" Url="html/0632ece9-e405-f522-e4c6-0977a6e09e49.htm" />
+  <HelpKINode Title="SuperclusterContants class">
+    <HelpKINode Title="SuperclusterContants Class" Url="html/0632ece9-e405-f522-e4c6-0977a6e09e49.htm" />
+    <HelpKINode Title="about SuperclusterContants class" Url="html/0632ece9-e405-f522-e4c6-0977a6e09e49.htm" />
+    <HelpKINode Title="fields" Url="html/e238925e-fe7a-98d5-b53c-a743db71e721.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SuperclusterContants.DOUBLE_TOLERANCE field" Url="html/4ab1ccce-054d-1a4b-1436-721e531eb69e.htm" />
+  <HelpKINode Title="Train method">
+    <HelpKINode Title="ExtendedNearestNeighbors(T).Train Method " Url="html/b3533473-ed0f-5494-6424-47d2e5ba2787.htm" />
+    <HelpKINode Title="ISupervisedClassifier(T).Train Method " Url="html/f7dbaec3-6bcf-f588-e884-a1f8f6c1690b.htm" />
+    <HelpKINode Title="KNearestNeighbors(T).Train Method " Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/7d3c96aa-9eb6-4708-a227-f51a71f1c35c.htm" />
+    <HelpKINode Title="history" Url="html/b7a3e6ff-e007-4f6f-83c6-e795f270f847.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WeightedKNNDistance field" Url="html/bf6517d0-fa57-3f0a-82cc-eaf2e0cec74c.htm" />
+  <HelpKINode Title="WeightedKNNLabels field" Url="html/1b9f01d5-8acf-0f8e-6bf6-50d33231d313.htm" />
+  <HelpKINode Title="Welcome" Url="html/e600e278-690e-40b0-95c6-c7d51c0b05a7.htm" />
+</HelpKI>
