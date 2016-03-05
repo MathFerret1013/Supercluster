@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV", "CSV\CSV.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster.DataGenerators", "SuperCluster.DataGenerators\Supercluster.DataGenerators.csproj", "{269190EA-520C-4BE5-9B4A-C2959160858C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workbench", "Workbench\Workbench.csproj", "{B2DFFE21-7120-4455-9BE8-205A536DE5DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2DFFE21-7120-4455-9BE8-205A536DE5DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2DFFE21-7120-4455-9BE8-205A536DE5DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2DFFE21-7120-4455-9BE8-205A536DE5DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2DFFE21-7120-4455-9BE8-205A536DE5DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

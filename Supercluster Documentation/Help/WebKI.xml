@@ -129,8 +129,29 @@
   <HelpKINode Title="Item property" Url="html/306e1054-1ddf-7d67-ce90-f81e8d928b90.htm" />
   <HelpKINode Title="K property">
     <HelpKINode Title="ExtendedNearestNeighbors(T).K Property " Url="html/f8696529-656f-b898-1e5c-bb6d60a98ad1.htm" />
+    <HelpKINode Title="KDTree.K Property " Url="html/22a489ee-ca8b-46c7-4546-96a423e267ff.htm" />
     <HelpKINode Title="KNearestNeighbors(T).K Property " Url="html/9d2df5dc-eb89-3daf-ebbd-dc2b689d94d5.htm" />
   </HelpKINode>
+  <HelpKINode Title="KDNode class">
+    <HelpKINode Title="KDNode Class" Url="html/f8bbbd93-95f2-d649-f624-c4defd94297f.htm" />
+    <HelpKINode Title="about KDNode class" Url="html/f8bbbd93-95f2-d649-f624-c4defd94297f.htm" />
+    <HelpKINode Title="constructor" Url="html/0afa19f6-46bb-68b6-d4e7-74c51d0d9253.htm" />
+    <HelpKINode Title="fields" Url="html/3e4a764c-23ef-5a66-0d67-24295ce6f904.htm" />
+    <HelpKINode Title="methods" Url="html/c096a14a-dfa7-eec8-03f0-e824f5d757aa.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KDNode.KDNode constructor" Url="html/0afa19f6-46bb-68b6-d4e7-74c51d0d9253.htm" />
+  <HelpKINode Title="KDNode.Left field" Url="html/88e8a29d-bdba-9882-da83-1ff5a2b0562b.htm" />
+  <HelpKINode Title="KDNode.Right field" Url="html/eb0d3e9f-442d-cf3c-7234-900a279fa2bc.htm" />
+  <HelpKINode Title="KDNode.Value field" Url="html/dd3d1b95-0ae4-8022-7a99-18373279c46a.htm" />
+  <HelpKINode Title="KDTree class">
+    <HelpKINode Title="KDTree Class" Url="html/18407681-6267-7427-6e54-1feb83ab816c.htm" />
+    <HelpKINode Title="about KDTree class" Url="html/18407681-6267-7427-6e54-1feb83ab816c.htm" />
+    <HelpKINode Title="constructor" Url="html/467c39b3-72df-5280-5fc3-b312128853b5.htm" />
+    <HelpKINode Title="methods" Url="html/68b5e5c6-8162-09e2-fc5c-bfbfebffdaf5.htm" />
+    <HelpKINode Title="properties" Url="html/a90ebb8c-61f3-8ad5-b93d-00510ff5ea1a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KDTree.K property" Url="html/22a489ee-ca8b-46c7-4546-96a423e267ff.htm" />
+  <HelpKINode Title="KDTree.KDTree constructor" Url="html/467c39b3-72df-5280-5fc3-b312128853b5.htm" />
   <HelpKINode Title="KMeans(Of T) class">
     <HelpKINode Title="KMeans(T) Class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
     <HelpKINode Title="about KMeans(Of T) class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
@@ -195,6 +216,7 @@
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Metric property" Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Train method" Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="Left field" Url="html/88e8a29d-bdba-9882-da83-1ff5a2b0562b.htm" />
   <HelpKINode Title="MaximallyDistantPoints(Of T) method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
   <HelpKINode Title="MaximallyDistantPoints&lt;T&gt; method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
   <HelpKINode Title="MaxIndex method" Url="html/871900b9-c650-a499-bfe7-fe1b0c405b33.htm" />
@@ -239,6 +261,7 @@
   <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
   <HelpKINode Title="point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
   <HelpKINode Title="Predict method" Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
+  <HelpKINode Title="Right field" Url="html/eb0d3e9f-442d-cf3c-7234-900a279fa2bc.htm" />
   <HelpKINode Title="SetAllElements(Of T) method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
   <HelpKINode Title="SetAllElements&lt;T&gt; method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
   <HelpKINode Title="SetColumn(Of T) method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
@@ -282,6 +305,9 @@
   <HelpKINode Title="Supercluster.CollectionUtilities class" Url="html/83540b78-ba96-a747-becf-f93466a84010.htm" />
   <HelpKINode Title="Supercluster.DoubleArrayEqualityComparer class" Url="html/62a980d9-99f7-4a86-5de2-de6c7ae3ceb0.htm" />
   <HelpKINode Title="Supercluster.DoubleEqualityComparer class" Url="html/985102d6-61ad-f136-bf95-9ca7e8a161bd.htm" />
+  <HelpKINode Title="Supercluster.KDTree namespace" Url="html/97c24bb6-2e34-f4cb-218a-920cfeba91b6.htm" />
+  <HelpKINode Title="Supercluster.KDTree.KDNode class" Url="html/f8bbbd93-95f2-d649-f624-c4defd94297f.htm" />
+  <HelpKINode Title="Supercluster.KDTree.KDTree class" Url="html/18407681-6267-7427-6e54-1feb83ab816c.htm" />
   <HelpKINode Title="Supercluster.NearestNeighborPoint(Of T) structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
   <HelpKINode Title="Supercluster.NearestNeighborPoint&lt;T&gt; structure" Url="html/5d7c042e-358e-7bd1-1a10-fcf5d934b2c9.htm" />
   <HelpKINode Title="Supercluster.SortedArray(Of T) class" Url="html/1ff81ad6-09e1-ea94-1753-a83bcd7262d5.htm" />
@@ -299,6 +325,7 @@
     <HelpKINode Title="KNearestNeighbors(T).Train Method " Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
   </HelpKINode>
   <HelpKINode Title="TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="Value field" Url="html/dd3d1b95-0ae4-8022-7a99-18373279c46a.htm" />
   <HelpKINode Title="version">
     <HelpKINode Title="1.0.0.0" Url="html/7d3c96aa-9eb6-4708-a227-f51a71f1c35c.htm" />
     <HelpKINode Title="history" Url="html/b7a3e6ff-e007-4f6f-83c6-e795f270f847.htm" />
