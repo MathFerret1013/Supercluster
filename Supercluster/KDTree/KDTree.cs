@@ -60,8 +60,7 @@ namespace Supercluster.KDTree
             var node = this.Root;
 
             // Keeps track of the nodes
-            var traversedNodes = new List<KDNode>();
-            traversedNodes.Add(node);
+            var traversedNodes = new List<KDNode> { node };
 
             while (true)
             {
