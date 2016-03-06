@@ -1,9 +1,5 @@
 # Supercluster
-A .NET machine learning focusing on clustering and metric learning
-
-
-#About
-This is a .NET based machine learning library that will focus on [clustering](https://en.wikipedia.org/wiki/Cluster_analysis) and [metric learning](https://en.wikipedia.org/wiki/Similarity_learning).
+A .NET machine learning focusing on clustering and metric learning focusing on [clustering](https://en.wikipedia.org/wiki/Cluster_analysis) and [metric learning](https://en.wikipedia.org/wiki/Similarity_learning).
 Currently I am just starting out, but I plan to focus on algorithms that are new (such as the ENN algorithm) as well as old classics (such as DBSCAN).
 
 
