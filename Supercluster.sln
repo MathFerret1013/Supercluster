@@ -11,6 +11,8 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Supercluster Documentation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster.DataGenerators", "SuperCluster.DataGenerators\Supercluster.DataGenerators.csproj", "{269190EA-520C-4BE5-9B4A-C2959160858C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workbench", "Workbench\Workbench.csproj", "{818F4FC0-BB21-4905-A028-0CBB357B8E39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

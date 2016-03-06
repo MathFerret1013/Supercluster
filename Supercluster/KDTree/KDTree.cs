@@ -3,8 +3,9 @@
 namespace Supercluster.KDTree
 {
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Linq;
+
+    using Supercluster.Algorithms;
 
     /// <summary>
     /// The node of a KDTree.
@@ -52,6 +53,32 @@ namespace Supercluster.KDTree
             this.GrowTree(ref this.Root, points.ToArray(), 0);
         }
 
+
+        public void SelectNearestPoint(double[] point)
+        {
+            var dim = 0;
+            var node = this.Root;
+
+            // Keeps track of the nodes
+            var traversedNodes = new List<KDNode>();
+            traversedNodes.Add(node);
+
+            while (true)
+            {
+                if (node == null)
+                {
+                    break;
+                }
+
+                node = node.Value[dim] < point[dim] ? node.Right : node.Left;
+                traversedNodes.Add(node);
+                dim = (dim + 1) % this.K;
+            }
+
+            // current best is node
+            var bestDistance = Norms.L2Norm_Squared(point, node.Value);
+
+        }
 
 
         private void GrowTree(ref KDNode localRoot, double[][] points, int dim)
