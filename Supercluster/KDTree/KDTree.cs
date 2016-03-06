@@ -60,22 +60,52 @@ namespace Supercluster.KDTree
             var node = this.Root;
 
             // Keeps track of the nodes
-            var traversedNodes = new List<KDNode> { node };
+            var traversedNodes = new Stack<KDNode>();
+            traversedNodes.Push(node);
 
             while (true)
             {
+                node = node.Value[dim] < point[dim] ? node.Right : node.Left;
+
                 if (node == null)
                 {
+                    node = traversedNodes.Peek();
                     break;
                 }
 
-                node = node.Value[dim] < point[dim] ? node.Right : node.Left;
-                traversedNodes.Add(node);
+                traversedNodes.Push(node);
                 dim = (dim + 1) % this.K;
             }
 
             // current best is node
             var bestDistance = Norms.L2Norm_Squared(point, node.Value);
+            var bestNode = node;
+
+
+            // we now unroll the recursion
+            while (traversedNodes.Any())
+            {
+                dim = (traversedNodes.Count - 1) % this.K;
+                var nextNode = traversedNodes.Pop();
+                var nextNodeDist = Norms.L2Norm_Squared(point, nextNode.Value);
+                
+                // Check if this is a better point
+                if (bestDistance > nextNodeDist)
+                {
+                    bestNode = nextNode;
+                    bestDistance = nextNodeDist;
+                }
+
+                // Check if points exist on the other side of the hyper plane
+                if (bestDistance > Math.Abs(bestNode.Value[dim] - point[dim]))
+                {
+
+                    
+                }
+
+
+
+            }
 
         }
 
