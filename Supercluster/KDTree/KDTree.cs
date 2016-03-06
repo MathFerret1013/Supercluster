@@ -39,8 +39,6 @@ namespace Supercluster.KDTree
     {
         public KDNode Root = new KDNode();
 
-        private int test = -1;
-
         public KDTree(int k, IEnumerable<double[]> points)
         {
             if (k < 1)
@@ -54,11 +52,18 @@ namespace Supercluster.KDTree
 
 
 
+        private void FindNearestNeighboor()
+        {
+            
+        }
+
+
         private void GrowTree(ref KDNode localRoot, double[][] points, int dim)
         {
             // See wikipedia for a good explanation kd-tree creation.
             // https://en.wikipedia.org/wiki/K-d_tree
 
+            // TODO: Move median logic to its own method.
             // sort the points along the current dimension
             var sortedPoints = points.OrderBy(p => p[dim]).ToArray();
 

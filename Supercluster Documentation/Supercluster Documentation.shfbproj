@@ -13,7 +13,7 @@
     <RootNamespace>Supercluster_Documentation</RootNamespace>
     <Name>Supercluster_Documentation</Name>
     <!-- SHFB properties -->
-    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
+    <FrameworkVersion>.NET Framework 4.6</FrameworkVersion>
     <OutputPath>.\Help\</OutputPath>
     <HtmlHelpName>Supercluster_Documentation</HtmlHelpName>
     <Language>en-US</Language>
@@ -30,7 +30,7 @@
       <DocumentationSource sourceFile="..\Supercluster\Supercluster.csproj" xmlns="" />
     </DocumentationSources>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <HelpFileFormat>Website</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
     <KeepLogFile>True</KeepLogFile>
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
@@ -42,7 +42,7 @@
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <PresentationStyle>VS2013</PresentationStyle>
-    <Preliminary>False</Preliminary>
+    <Preliminary>True</Preliminary>
     <NamingMethod>Guid</NamingMethod>
     <HelpTitle>Supercluster Clustering Library</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>

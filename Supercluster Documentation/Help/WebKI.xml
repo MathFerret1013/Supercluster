@@ -135,11 +135,11 @@
   <HelpKINode Title="KDNode class">
     <HelpKINode Title="KDNode Class" Url="html/f8bbbd93-95f2-d649-f624-c4defd94297f.htm" />
     <HelpKINode Title="about KDNode class" Url="html/f8bbbd93-95f2-d649-f624-c4defd94297f.htm" />
-    <HelpKINode Title="constructor" Url="html/0afa19f6-46bb-68b6-d4e7-74c51d0d9253.htm" />
+    <HelpKINode Title="constructor" Url="html/19b5d77d-8639-0bf9-f58e-60d4aeefdcdd.htm" />
     <HelpKINode Title="fields" Url="html/3e4a764c-23ef-5a66-0d67-24295ce6f904.htm" />
     <HelpKINode Title="methods" Url="html/c096a14a-dfa7-eec8-03f0-e824f5d757aa.htm" />
   </HelpKINode>
-  <HelpKINode Title="KDNode.KDNode constructor" Url="html/0afa19f6-46bb-68b6-d4e7-74c51d0d9253.htm" />
+  <HelpKINode Title="KDNode.KDNode constructor" Url="html/19b5d77d-8639-0bf9-f58e-60d4aeefdcdd.htm" />
   <HelpKINode Title="KDNode.Left field" Url="html/88e8a29d-bdba-9882-da83-1ff5a2b0562b.htm" />
   <HelpKINode Title="KDNode.Right field" Url="html/eb0d3e9f-442d-cf3c-7234-900a279fa2bc.htm" />
   <HelpKINode Title="KDNode.Value field" Url="html/dd3d1b95-0ae4-8022-7a99-18373279c46a.htm" />
@@ -147,11 +147,13 @@
     <HelpKINode Title="KDTree Class" Url="html/18407681-6267-7427-6e54-1feb83ab816c.htm" />
     <HelpKINode Title="about KDTree class" Url="html/18407681-6267-7427-6e54-1feb83ab816c.htm" />
     <HelpKINode Title="constructor" Url="html/467c39b3-72df-5280-5fc3-b312128853b5.htm" />
+    <HelpKINode Title="fields" Url="html/d62c0d26-8ae3-4ef2-d1d8-a24023125476.htm" />
     <HelpKINode Title="methods" Url="html/68b5e5c6-8162-09e2-fc5c-bfbfebffdaf5.htm" />
     <HelpKINode Title="properties" Url="html/a90ebb8c-61f3-8ad5-b93d-00510ff5ea1a.htm" />
   </HelpKINode>
   <HelpKINode Title="KDTree.K property" Url="html/22a489ee-ca8b-46c7-4546-96a423e267ff.htm" />
   <HelpKINode Title="KDTree.KDTree constructor" Url="html/467c39b3-72df-5280-5fc3-b312128853b5.htm" />
+  <HelpKINode Title="KDTree.Root field" Url="html/113d2a86-184b-66b5-f6c5-a33ba5969a61.htm" />
   <HelpKINode Title="KMeans(Of T) class">
     <HelpKINode Title="KMeans(T) Class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
     <HelpKINode Title="about KMeans(Of T) class" Url="html/83634fb5-3a75-fe5a-7a75-7228a78c88e4.htm" />
@@ -216,6 +218,8 @@
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Metric property" Url="html/ffde8df9-c471-f63d-f0b4-4cf92237b3e0.htm" />
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.Train method" Url="html/be08d642-b48e-543d-e321-b213d824c962.htm" />
   <HelpKINode Title="KNearestNeighbors&lt;T&gt;.TrainAll method" Url="html/371e3409-8271-f932-907a-9801ce3d8b7c.htm" />
+  <HelpKINode Title="L2Norm field" Url="html/9f125334-d454-7e7c-2422-c56a7e323bbf.htm" />
+  <HelpKINode Title="L2Norm_Squared field" Url="html/87e3c32a-e7c1-0b02-61ca-7ee7d91bda66.htm" />
   <HelpKINode Title="Left field" Url="html/88e8a29d-bdba-9882-da83-1ff5a2b0562b.htm" />
   <HelpKINode Title="MaximallyDistantPoints(Of T) method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
   <HelpKINode Title="MaximallyDistantPoints&lt;T&gt; method" Url="html/c85934e9-c28f-97cc-9090-45dfd0c69776.htm" />
@@ -259,9 +263,17 @@
   <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.Distance field" Url="html/0d204d9c-5760-e809-46b2-b3d3d689149d.htm" />
   <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.NearestNeighborPoint constructor" Url="html/3c58568c-c9f1-cb02-3636-651e7c01487a.htm" />
   <HelpKINode Title="NearestNeighborPoint&lt;T&gt;.point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
+  <HelpKINode Title="Norms class">
+    <HelpKINode Title="Norms Class" Url="html/de979fc4-c81b-cbd8-c78b-20d68f96694f.htm" />
+    <HelpKINode Title="about Norms class" Url="html/de979fc4-c81b-cbd8-c78b-20d68f96694f.htm" />
+    <HelpKINode Title="fields" Url="html/2d8ba101-2b75-164a-e8b7-06b795ffe477.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Norms.L2Norm field" Url="html/9f125334-d454-7e7c-2422-c56a7e323bbf.htm" />
+  <HelpKINode Title="Norms.L2Norm_Squared field" Url="html/87e3c32a-e7c1-0b02-61ca-7ee7d91bda66.htm" />
   <HelpKINode Title="point field" Url="html/b7354cee-f404-302d-77ab-a3cd6acc196d.htm" />
   <HelpKINode Title="Predict method" Url="html/d750001b-8a9d-d86f-5029-4340af480ff9.htm" />
   <HelpKINode Title="Right field" Url="html/eb0d3e9f-442d-cf3c-7234-900a279fa2bc.htm" />
+  <HelpKINode Title="Root field" Url="html/113d2a86-184b-66b5-f6c5-a33ba5969a61.htm" />
   <HelpKINode Title="SetAllElements(Of T) method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
   <HelpKINode Title="SetAllElements&lt;T&gt; method" Url="html/db6e4822-88c9-9681-220e-81be2afb97fa.htm" />
   <HelpKINode Title="SetColumn(Of T) method" Url="html/67c6706d-5318-f489-bc61-ae96fd7eb0a0.htm" />
@@ -292,6 +304,7 @@
   <HelpKINode Title="Supercluster namespace" Url="html/1cad8578-9813-ec0d-b78d-321c3e8720d1.htm" />
   <HelpKINode Title="Supercluster.Algorithms namespace" Url="html/e08ed7cb-be1e-820e-b84b-a78b34f13817.htm" />
   <HelpKINode Title="Supercluster.Algorithms.MostDistantPoints class" Url="html/8e9f1125-f8c1-c7da-a12d-02cdc06630cb.htm" />
+  <HelpKINode Title="Supercluster.Algorithms.Norms class" Url="html/de979fc4-c81b-cbd8-c78b-20d68f96694f.htm" />
   <HelpKINode Title="Supercluster.Classification namespace" Url="html/04d1386f-01bd-469a-6cd1-b1d7fdf71313.htm" />
   <HelpKINode Title="Supercluster.Classification.ExtendedNearestNeighbors(Of T) class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
   <HelpKINode Title="Supercluster.Classification.ExtendedNearestNeighbors&lt;T&gt; class" Url="html/b8e81cba-9500-45e6-bc91-afca28f40a79.htm" />
