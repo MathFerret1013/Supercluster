@@ -8,6 +8,7 @@ I am the only developer on the project so I can do it my way.
 * **Correctness:** I am a mathematician. Machine Learning is just mathematics. Mathematics must be correct, hence **all** algorithms are rigoursly unit tested.
 * **Documentation:**  I strive for super-thourogh documentation. Admittely at this stage it is hard to keep up. But after release 1.1. I will redocument the code base.
 * **Quality:** Thourough commenting, style-cop compliance, and following good software design principles. Mathematicians have been writting bad code for too long. This stops now. Quality is as important as correctness.
+* **Approriate Efficeny:** Code is optimized where it **needs** to be optimized. Let's be honest. This is C#. I can't compete with C++, but more and more people are using high-level languages for data-science. When an optimization can drastically improve performance (e.g., using k-d-trees, multi-threading) I optimize. When optimization complicates the code for a 1% speed increase, I don't.
 
 
 ###Algorithms
@@ -26,4 +27,4 @@ Here is a list of currently supported algorithms:
 ### Code
 * Refactor of the ENN code.
 * A KD-Tree implementation.
-* Updating kNN, kMmeans and ENN to use a KD-Tree
+* Updating kNN, kMeans and ENN to use a KD-Tree
