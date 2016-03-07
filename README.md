@@ -1,6 +1,6 @@
 # Supercluster
 A .NET machine learning focusing on [clustering](https://en.wikipedia.org/wiki/Cluster_analysis) and [metric learning](https://en.wikipedia.org/wiki/Similarity_learning).
-Currently I am just starting out, but I plan to focus on algorithms that are new (such as the ENN algorithm) as well as old classics (such as DBSCAN). The project is under heavy development and I have *many* things planed.
+Currently I am just starting out, but I plan to focus on algorithms that are new (such as the ENN algorithm) as well as old classics (such as DBSCAN). The project is under heavy development and I have **many** things planed.
 
 
 ##Algorithms
