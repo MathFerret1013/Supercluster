@@ -88,7 +88,7 @@ namespace Supercluster.KDTree
                 dim = (traversedNodes.Count - 1) % this.K;
                 var nextNode = traversedNodes.Pop();
                 var nextNodeDist = Norms.L2Norm_Squared(point, nextNode.Value);
-                
+
                 // Check if this is a better point
                 if (bestDistance > nextNodeDist)
                 {
@@ -100,7 +100,7 @@ namespace Supercluster.KDTree
                 if (bestDistance > Math.Abs(bestNode.Value[dim] - point[dim]))
                 {
 
-                    
+
                 }
 
 
