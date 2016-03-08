@@ -27,18 +27,26 @@ namespace Supercluster.KDTree
         /// </summary>
         public KDNode Right = null;
 
-        public KDNode(double[] value = null, KDNode left = null, KDNode right = null)
+        /// <summary>
+        /// The parent of the current node. If the current node is the root node, then its parent is null.
+        /// </summary>
+        public KDNode Parent = null;
+
+        public KDNode(double[] value = null, KDNode parent = null, KDNode left = null, KDNode right = null)
         {
             this.Value = value;
             this.Left = left;
             this.Right = right;
+            this.Parent = parent;
         }
     }
 
 
     public class KDTree
     {
-        public KDNode Root = new KDNode();
+        public KDNode Root = new KDNode(null, null);
+
+        public int Count;
 
         private int test = -1;
 
@@ -50,67 +58,89 @@ namespace Supercluster.KDTree
             }
 
             this.K = k;
-            this.GrowTree(ref this.Root, points.ToArray(), 0);
+            this.GrowTree(ref this.Root, null, points.ToArray(), 0);
+            this.Count = points.Count();
         }
 
 
-        public void SelectNearestPoint(double[] point)
+        public FallThroughStack<KDNode> NearestPoints = new FallThroughStack<KDNode>(3);
+
+        public KDNode FindNearestNeighbor(double[] point)
         {
-            var dim = 0;
-            var node = this.Root;
+            // see where point would be inserted
+            var parentAfterInsertWithDim = this.FalseInsert(this.Root, point, 0);
+            var currentBest = parentAfterInsertWithDim.Item1;
+            var dim = parentAfterInsertWithDim.Item2;
 
-            // Keeps track of the nodes
-            var traversedNodes = new Stack<KDNode>();
-            traversedNodes.Push(node);
+            // set the point as the curent "best"
+            var bestDist = Norms.L2Norm_Squared(point, currentBest.Value);
 
-            while (true)
+            var visitedNodes = new List<KDNode>();
+
+            // start unwinding the recursion
+            var previousNode = currentBest;
+            var currentNode = currentBest.Parent;
+            dim = (dim + 1) % this.K;
+            visitedNodes.Add(previousNode);
+
+            while (currentNode != null)
             {
-                node = node.Value[dim] < point[dim] ? node.Right : node.Left;
+                // go up and test
+                var currentDist = Norms.L2Norm_Squared(point, currentNode.Value);
 
-                if (node == null)
+                if (currentDist < bestDist) // we found a better node
                 {
-                    node = traversedNodes.Peek();
-                    break;
+                    bestDist = currentDist;
+                    currentBest = currentNode;
                 }
 
-                traversedNodes.Push(node);
-                dim = (dim + 1) % this.K;
+
+                // check if there could be points on the other side of the hyper plane
+                var hyperPlaneDist = Math.Pow(point[dim] - currentNode.Value[dim], 2);
+                if (hyperPlaneDist < bestDist)
+                {
+                    // The hyper plane intersects the hyper sphere so we check the OTHER side of the branch.
+                    // We check which side the previous node was on.
+                    // If greater than 0 we were a left child, other wise, we were a right child
+                    bool leftSide = currentNode.Value[dim] - previousNode.Value[dim] > 0;
+                    var nextNode = leftSide ? currentNode.Right : currentNode.Left;
+
+                    if (nextNode != null && // We can only go down if the brach exists
+                        !visitedNodes.Contains(nextNode)) // Don't go down to the node if we visited it before
+                    {
+                        // Now we go down the opposite side of the branch
+                        var nextInsertNode = this.FalseInsert(nextNode, point, (dim + 1) % this.K);
+                        dim = nextInsertNode.Item2;
+                        currentNode = nextInsertNode.Item1;
+                    }
+                    else
+                    {
+                        previousNode = currentNode;
+                        currentNode = currentNode.Parent;
+                        dim = (dim + 1) % this.K;
+                        visitedNodes.Add(previousNode);
+                    }
+                }
+                else // The hyperplane does not intersect, move up the branch
+                {
+                    previousNode = currentNode;
+                    currentNode = currentNode.Parent;
+                    dim = (dim + 1) % this.K;
+                    visitedNodes.Add(previousNode);
+                }
             }
 
-            // current best is node
-            var bestDistance = Norms.L2Norm_Squared(point, node.Value);
-            var bestNode = node;
-
-
-            // we now unroll the recursion
-            while (traversedNodes.Any())
-            {
-                dim = (traversedNodes.Count - 1) % this.K;
-                var nextNode = traversedNodes.Pop();
-                var nextNodeDist = Norms.L2Norm_Squared(point, nextNode.Value);
-
-                // Check if this is a better point
-                if (bestDistance > nextNodeDist)
-                {
-                    bestNode = nextNode;
-                    bestDistance = nextNodeDist;
-                }
-
-                // Check if points exist on the other side of the hyper plane
-                if (bestDistance > Math.Abs(bestNode.Value[dim] - point[dim]))
-                {
-
-
-                }
-
-
-
-            }
-
+            return currentBest;
         }
 
-
-        private void GrowTree(ref KDNode localRoot, double[][] points, int dim)
+        /// <summary>
+        /// Grows a KD tree recursively
+        /// </summary>
+        /// <param name="currentNode">The current node in the recursion.</param>
+        /// <param name="previousNode">The node in the previous level of the recursion. This is als the parent of the cirrent node.</param>
+        /// <param name="points">The set of points remaining to be added to the kd-tree</param>
+        /// <param name="dim">The current splitting dimension of the kd-tree. This is the depth mod K, where K is the dimensionality of the data set and depth is the depth of the tree.</param>
+        private void GrowTree(ref KDNode currentNode, KDNode previousNode, double[][] points, int dim)
         {
             // See wikipedia for a good explanation kd-tree creation.
             // https://en.wikipedia.org/wiki/K-d_tree
@@ -123,7 +153,9 @@ namespace Supercluster.KDTree
             var medianPointIdx = sortedPoints.Length / 2;
 
             // The point with the median value all the current dimension now becomes the value of the current tree node
-            localRoot = new KDNode(value: medianPoint);
+            // The previous node becomes the parents of the current node.
+            currentNode = new KDNode(value: medianPoint, parent: previousNode);
+            previousNode = currentNode; // Set the previous node to the current for the next level of recursion.
 
             // We now split the sorted points into 2 groups
             // 1st group: points before the median
@@ -147,12 +179,12 @@ namespace Supercluster.KDTree
             {
                 if (leftPoints.Length == 1)
                 {
-                    localRoot.Left = new KDNode { Value = leftPoints[0] };
+                    currentNode.Left = new KDNode { Value = leftPoints[0], Parent = previousNode };
                 }
             }
             else
             {
-                this.GrowTree(ref localRoot.Left, leftPoints, nextDim);
+                this.GrowTree(ref currentNode.Left, currentNode, leftPoints, nextDim);
             }
 
             // Do the same for the right points
@@ -160,15 +192,48 @@ namespace Supercluster.KDTree
             {
                 if (rightPoints.Length == 1)
                 {
-                    localRoot.Right = new KDNode { Value = rightPoints[0] };
+                    currentNode.Right = new KDNode { Value = rightPoints[0], Parent = previousNode };
                 }
             }
             else
             {
-                this.GrowTree(ref localRoot.Right, rightPoints, nextDim);
+                this.GrowTree(ref currentNode.Right, currentNode, rightPoints, nextDim);
             }
         }
 
+        /// <summary>
+        /// Attempts to insert a node to the given subtree, but doesn't actually insert it.
+        /// </summary>
+        /// <param name="root">The root node of the sub-tree</param>
+        /// <param name="point">The point that would be inserted.</param>
+        /// <param name="dim">The splitting dimension of the <paramref name="root"/> parameter.</param>
+        /// <returns>The node that would be the parent of the inserted node.</returns>
+        private Tuple<KDNode, int> FalseInsert(KDNode root, double[] point, int dim)
+        {
+            var node = root;
+
+            // Keeps track of the nodes
+            var lastNode = node;
+
+            while (true)
+            {
+                node = node.Value[dim] < point[dim] ? node.Right : node.Left;
+
+                if (node == null)
+                {
+                    break;
+                }
+
+                lastNode = node;
+                dim = (dim + 1) % this.K;
+            }
+
+            return new Tuple<KDNode, int>(lastNode, dim);
+        }
+
+        /// <summary>
+        /// The dimenonality of the tree.
+        /// </summary>
         public int K { get; }
 
     }
