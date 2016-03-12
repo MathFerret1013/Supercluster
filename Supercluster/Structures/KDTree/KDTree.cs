@@ -69,19 +69,21 @@ namespace Supercluster.KDTree
         {
             // see where point would be inserted
             var parentAfterInsertWithDim = this.FalseInsert(this.Root, point, 0);
-            var currentBest = parentAfterInsertWithDim.Item1;
+            KDNode currentBest = null;
             var dim = parentAfterInsertWithDim.Item2;
 
             // set the point as the curent "best"
-            var bestDist = Norms.L2Norm_Squared(point, currentBest.Value);
+            var bestDist = double.MaxValue;
 
             var visitedNodes = new List<KDNode>();
 
             // start unwinding the recursion
-            var previousNode = currentBest;
-            var currentNode = currentBest.Parent;
-            dim = (dim + 1) % this.K;
-            visitedNodes.Add(previousNode);
+            var testNode = new KDNode(point);
+            var previousNode = testNode;
+            var currentNode = parentAfterInsertWithDim.Item1;
+
+            // dim = (dim + 1) % this.K;
+            // visitedNodes.Add(currentNode);
 
             while (currentNode != null)
             {
@@ -110,8 +112,10 @@ namespace Supercluster.KDTree
                     {
                         // Now we go down the opposite side of the branch
                         var nextInsertNode = this.FalseInsert(nextNode, point, (dim + 1) % this.K);
-                        dim = nextInsertNode.Item2;
+                        previousNode = testNode;
                         currentNode = nextInsertNode.Item1;
+                        dim = nextInsertNode.Item2;
+                        // visitedNodes.Add(previousNode);
                     }
                     else
                     {
