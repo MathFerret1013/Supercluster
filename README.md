@@ -26,5 +26,5 @@ Here is a list of currently supported algorithms:
 
 ### Code
 * Refactor of the ENN code.
-* A KD-Tree implementation.
-* Updating kNN, kMeans and ENN to use a KD-Tree
+* ~~A KD-Tree implementation.~~ Done: https://github.com/MathFerret1013/Supercluster.KDTree
+* Updating kNN, kMeans and ENN to accept a KD-Tree during construction
