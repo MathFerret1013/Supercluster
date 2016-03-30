@@ -24,7 +24,10 @@ Here is a list of currently supported algorithms:
 * [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN)
 * [OPTICS](https://en.wikipedia.org/wiki/OPTICS_algorithm)
 
+### Data Structures
+* ~~A KD-Tree implementation.~~ Done: https://github.com/MathFerret1013/Supercluster.KDTree
+* A Metric Tree implemention
+
 ### Code
 * Refactor of the ENN code.
-* ~~A KD-Tree implementation.~~ Done: https://github.com/MathFerret1013/Supercluster.KDTree
-* Updating kNN, kMeans and ENN to accept a KD-Tree during construction
+* Updating kNN, kMeans and ENN to accept a Tree during construction
