@@ -55,7 +55,7 @@ namespace Supercluster.Clustering
 
         public void Compute()
         {
-            // holds the distances between centroids and current point
+            // holds the distances between centroids and current Point
             var centroidDistances = new double[this.Clusters];
             var lastCentroidValues = new T[this.Clusters];
 
@@ -64,7 +64,7 @@ namespace Supercluster.Clustering
             {
                 Array.Copy(this.Centroids, lastCentroidValues, this.Clusters);
 
-                // for each data point
+                // for each data Point
                 for (int pointIndex = 0; pointIndex < this.ClusterData.Count; pointIndex++)
                 {
                     // Calculate distance from each centroid
@@ -78,7 +78,7 @@ namespace Supercluster.Clustering
                     // Choose the centroid that is closest
                     var minIndex = centroidDistances.MinIndex();
 
-                    // Set the point as belonging to the closest centroid
+                    // Set the Point as belonging to the closest centroid
                     this.ClusterLabels[pointIndex] = minIndex;
                 }
 

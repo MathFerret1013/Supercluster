@@ -5,13 +5,13 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster", "Supercluster\Supercluster.csproj", "{454782A4-2DA2-49A0-BD91-E2B130B2382D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster Tests", "Supercluster Tests\Supercluster Tests.csproj", "{0D661C93-C40A-4B3F-AFE8-B7D24A36F4AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster.Tests", "Supercluster.Tests\Supercluster.Tests.csproj", "{0D661C93-C40A-4B3F-AFE8-B7D24A36F4AD}"
 EndProject
-Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Supercluster Documentation", "Supercluster Documentation\Supercluster Documentation.shfbproj", "{5632D766-8805-4CA4-BE2D-5106063E3FAA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster.DataGenerators", "SuperCluster.DataGenerators\Supercluster.DataGenerators.csproj", "{269190EA-520C-4BE5-9B4A-C2959160858C}"
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Supercluster.Documentation", "Supercluster.Documentation\Supercluster.Documentation.shfbproj", "{5632D766-8805-4CA4-BE2D-5106063E3FAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workbench", "Workbench\Workbench.csproj", "{818F4FC0-BB21-4905-A028-0CBB357B8E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercluster.VisualTests", "Supercluster.VisualTests\Supercluster.VisualTests.csproj", "{E29CC7A0-181C-4300-89EC-6FD65618E4AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{5632D766-8805-4CA4-BE2D-5106063E3FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5632D766-8805-4CA4-BE2D-5106063E3FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5632D766-8805-4CA4-BE2D-5106063E3FAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{269190EA-520C-4BE5-9B4A-C2959160858C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{269190EA-520C-4BE5-9B4A-C2959160858C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{269190EA-520C-4BE5-9B4A-C2959160858C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{818F4FC0-BB21-4905-A028-0CBB357B8E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29CC7A0-181C-4300-89EC-6FD65618E4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29CC7A0-181C-4300-89EC-6FD65618E4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29CC7A0-181C-4300-89EC-6FD65618E4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29CC7A0-181C-4300-89EC-6FD65618E4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

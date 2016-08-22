@@ -23,8 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Supercluster.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Supercluster.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,45 +32,58 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Supercluster.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\MostDistantPoints.cs" />
-    <Compile Include="Algorithms\Norms.cs" />
     <Compile Include="Classification\ExtendedNearestNeighbors{T}.cs" />
     <Compile Include="Classification\ISupervisedClassifier{T}.cs" />
     <Compile Include="Classification\KNearestNeighbors{T}.cs" />
     <Compile Include="Clustering\KMeans{T}.cs" />
-    <Compile Include="CollectionUtilities.cs" />
-    <Compile Include="DoubleEqualityComparer.cs" />
-    <Compile Include="Structures\FallThroughStack.cs" />
+    <Compile Include="Core\CollectionUtilities.cs" />
+    <Compile Include="Structures\Interfaces\ISpatialQueryable.cs" />
+    <Compile Include="Structures\BoundedPriorityList.cs" />
+    <Compile Include="Structures\KDTree\HyperRect.cs" />
     <Compile Include="Structures\KDTree\KDTree.cs" />
-    <Compile Include="Structures\NearestNeighborPoint.cs" />
+    <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigation.cs" />
+    <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigator.cs" />
+    <Compile Include="Structures\KDTree\Utilities\BoundedPriorityListExtensions.cs" />
+    <Compile Include="Structures\MTree\MTree.cs" />
+    <Compile Include="Structures\MTree\NewDesign\DistanceMatrix.cs" />
+    <Compile Include="Structures\MTree\NewDesign\MNode.cs" />
+    <Compile Include="Structures\MTree\NewDesign\MNodeEntry.cs" />
+    <Compile Include="Structures\MTree\NewDesign\PromotionResult.cs" />
+    <Compile Include="Structures\MTree\Utilities.cs" />
+    <Compile Include="Core\DoubleEqualityComparer.cs" />
+    <Compile Include="Structures\KnnPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Structures\SortedArray{T}.cs" />
-    <Compile Include="SuperclusterContants.cs" />
+    <Compile Include="Structures\MetricSpaceSubset.cs" />
+    <Compile Include="Core\SuperclusterContants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="stylecop.json" />
+    <None Include="Supercluster.ruleset" />
+    <None Include="Supercluster.pfx" />
+    <None Include="Structures\KDTree\LICENSE" />
+    <None Include="Structures\KDTree\README.md" />
+    <None Include="Structures\MTree\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-beta015\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\StyleCop.Analyzers.1.0.0-beta015\build\StyleCop.Analyzers.targets" Condition="Exists('..\packages\StyleCop.Analyzers.1.0.0-beta015\build\StyleCop.Analyzers.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\StyleCop.Analyzers.1.0.0-beta015\build\StyleCop.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.Analyzers.1.0.0-beta015\build\StyleCop.Analyzers.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

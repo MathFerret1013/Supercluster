@@ -59,11 +59,11 @@
                 numTrainingEachClass[i] = this.trainingOutputs.Count(l => l == i);
             }
 
-            // classify each point
+            // classify each Point
             for (int i = 0; i < testingData.Length; i++)
             {
 
-                // get all distances for the point
+                // get all distances for the Point
                 var distances = new List<double[]>();
                 for (int j = 0; j < this.trainingData.Length; j++)
                 {
@@ -96,7 +96,7 @@
                     var indicies = this.trainingOutputs.FindAllIndex(l => l == j).ToArray();
                     distances = distances.OrderBy(d => d[0]).ToList();
 
-                    // calculates the distances for each point 
+                    // calculates the distances for each Point 
                     var testingMuDistances = distances.SubsetByIndex(indicies).Select(x => x[1]).ToArray();
 
                     // only get the k-th nearest neighbor
@@ -143,7 +143,7 @@
         public int K { get; private set; }
 
         /// <summary>
-        /// Performs classification of a single point.
+        /// Performs classification of a single Point.
         /// </summary>
         /// <param name="dataPoint">Datum to be classified.</param>
         /// <returns>The output-class index.</returns>
@@ -158,7 +158,7 @@
                 numTrainingEachClass[i] = this.trainingOutputs.Count(l => l == i);
             }
 
-            // get all distances for the point
+            // get all distances for the Point
             var distances = new List<double[]>();
             for (int j = 0; j < this.trainingData.Length; j++)
             {
@@ -191,7 +191,7 @@
                 var indicies = this.trainingOutputs.FindAllIndex(l => l == j).ToArray();
                 distances = distances.OrderBy(d => d[0]).ToList();
 
-                // calculates the distances for each point 
+                // calculates the distances for each Point 
                 var testingMuDistances = distances.SubsetByIndex(indicies).Select(x => x[1]).ToArray();
 
                 // only get the k-th nearest neighbor
@@ -281,7 +281,7 @@
 
                 var count = 0;
 
-                // for each point in the current class
+                // for each Point in the current class
                 for (int j = 0; j < numTraining; j++)
                 {
                     // count the number of k neighbours that are the current class

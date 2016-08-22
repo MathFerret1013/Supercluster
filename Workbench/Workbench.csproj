@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Supercluster\Supercluster.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Supercluster\Supercluster.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Supercluster.Tests\Supercluster.Tests.csproj">
+      <Project>{0D661C93-C40A-4B3F-AFE8-B7D24A36F4AD}</Project>
+      <Name>Supercluster.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Supercluster\Supercluster.csproj">
       <Project>{454782a4-2da2-49a0-bd91-e2b130b2382d}</Project>
       <Name>Supercluster</Name>
