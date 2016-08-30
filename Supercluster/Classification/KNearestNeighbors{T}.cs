@@ -22,7 +22,7 @@ namespace Supercluster.Classification
     /// and then chooses the class which is most common among the <i>k</i> neighbors.</para>
     /// 
     /// <para> The picture below is of the output of the kNN algorithm k=3 in a 2-dimensional feature space with 2 classes. The blue and red dots are point belonging to class 1 and class 2 which were learned during model training.
-    ///  The green dots are new point which were classified as class 1 (meaning atleast 2 of their nearest neighbors are in class 1). The yellow dots are new point which were classified as class 2 (meaning atleast 2 of their nearest neighbors are in class 2).</para>
+    ///  The green dots are new point which were classified as class 1 (meaning at least 2 of their nearest neighbors are in class 1). The yellow dots are new point which were classified as class 2 (meaning atleast 2 of their nearest neighbors are in class 2).</para>
     ///  <img src="..\..\media\knn_example.png" />
     /// 
     /// <h3>Advantages</h3>
@@ -61,20 +61,22 @@ namespace Supercluster.Classification
         /// <summary>
         /// The internal dataset of the points observed.
         /// </summary>
-        private ISpatialQueryable<KnnPoint<T>> internalData;
+        private ISpatialQueryable<T> internalData;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="KNearestNeighbors{T}"/> class.
         /// </summary>
         /// <param name="k">The number of neighbors during classification</param>
         /// <param name="clusters">The number of clusters (classes) that the model should have</param>
-        public KNearestNeighbors(int k, int clusters, Func<T, T, double> metric)
+        public KNearestNeighbors(int k, Func<T, T, double> metric)
         {
             this.Metric = metric;
-            this.Clusters = clusters;
+
             this.K = k;
 
-            this.internalData = new MetricSpaceSubset<KnnPoint<T>>((x, y) => this.Metric(x.Point, y.Point));
+            this.internalData = new MetricSpaceSubset<T>((x, y) => this.Metric(x, y));
+            this.clusterIndexDictionary = new Dictionary<int, List<int>>();
+            this.Clusters = new ClusterDictionary<int, T>(this.internalData, this.clusterIndexDictionary);
         }
 
         /// <summary>
@@ -85,7 +87,9 @@ namespace Supercluster.Classification
         /// <summary>
         /// The number of clusters the model has.
         /// </summary>
-        public int Clusters { get; }
+        public ClusterDictionary<int, T> Clusters { get; }
+
+        private Dictionary<int, List<int>> clusterIndexDictionary;
 
         /// <summary>
         /// The number of neighbors used during classification.
@@ -100,13 +104,15 @@ namespace Supercluster.Classification
         /// <exception cref="ArgumentException">Thrown if the label of the point does not exist in the current model.</exception>
         public void Train(T point, int label)
         {
-            // The label given must be within the number of clusters
-            if (!(label >= 0 && label < this.Clusters))
+            var pointIndex = this.internalData.Add(point);
+            if (this.clusterIndexDictionary.ContainsKey(label))
             {
-                throw new ArgumentException("You provided a label to a cluster that does not exist in the current model.");
+                this.clusterIndexDictionary[label].Add(pointIndex);
             }
-
-            this.internalData.Add(new KnnPoint<T>(point, label));
+            else
+            {
+                this.clusterIndexDictionary.Add(label, new List<int> { pointIndex });
+            }
         }
 
         /// <summary>
@@ -137,15 +143,25 @@ namespace Supercluster.Classification
         /// <returns>A class label</returns>
         public int Classify(T datapoint)
         {
-            var nearestNeighbors = this.internalData.NearestNeighbors(new KnnPoint<T>(datapoint, -1), this.K);
+            var nearestNeighborIndexes = this.internalData.NearestNeighborIndexes(datapoint, this.K);
 
-            var labelCount = new int[this.Clusters];
-            foreach (var neighbor in nearestNeighbors)
+            // NOTE: We assume that a point belongs to only one cluster
+            var keys = this.clusterIndexDictionary.Keys.ToArray();
+            var labelCount = new int[keys.Length];
+            foreach (var neighborIndex in nearestNeighborIndexes)
             {
-                labelCount[neighbor.ClassLabel]++;
+                for (var i = 0; i < keys.Length; i++)
+                {
+                    if (this.clusterIndexDictionary[keys[i]].Contains(neighborIndex))
+                    {
+                        // we found the cluster we belong to. Don't check the other clusters.
+                        labelCount[i]++;
+                        break;
+                    }
+                }
             }
 
-            return labelCount.MaxIndex();
+            return keys[labelCount.MaxIndex()];
         }
     }
 }

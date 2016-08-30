@@ -16,11 +16,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MetricSpaceSubset{T}"/> class.
         /// </summary>
-        /// <param name="source">I A set of initial values for the collections.</param>
+        /// <param name="source">A set of initial values for the collections.</param>
         /// <param name="metric">The metric function which implicitly determines a metric space.</param>
         public MetricSpaceSubset(IEnumerable<T> source, Func<T, T, double> metric)
         {
-            this.Source = source.ToList();
+            this.source = source.ToList();
             this.Metric = metric;
         }
 
@@ -30,7 +30,7 @@
         /// <param name="metric">The metric function which implicitly determines a metric space.</param>
         public MetricSpaceSubset(Func<T, T, double> metric)
         {
-            this.Source = new List<T>();
+            this.source = new List<T>();
             this.Metric = metric;
         }
 
@@ -41,20 +41,21 @@
         public Func<T, T, double> Metric { get; }
 
         /// <summary>
-        /// The internal collection of
+        /// The internal collection of elements
         /// </summary>
-        private List<T> Source { get; }
+        private List<T> source;
 
         /// <inheritdoc />
-        public void Add(T item)
+        public int Add(T item)
         {
-            this.Source.Add(item);
+            this.source.Add(item);
+            return this.source.Count - 1;
         }
 
         /// <inheritdoc />
         public IEnumerator<T> GetEnumerator()
         {
-            return this.Source.GetEnumerator();
+            return this.source.GetEnumerator();
         }
 
         /// <inheritdoc />
@@ -66,9 +67,9 @@
         /// <inheritdoc />
         public IEnumerable<T> NearestNeighbors(T target, int k)
         {
-            var boundedPriorityList = new BoundedPriorityList<T, double>(k);
+            var boundedPriorityList = new BoundablePriorityList<T, double>(k);
 
-            foreach (var point in this.Source)
+            foreach (var point in this.source)
             {
                 boundedPriorityList.Add(point, this.Metric(point, target));
             }
@@ -77,9 +78,34 @@
         }
 
         /// <inheritdoc />
+        public IEnumerable<int> NearestNeighborIndexes(T target, int k)
+        {
+            var boundedPriorityList = new BoundablePriorityList<int, double>(k);
+
+            for (var i = 0; i < this.source.Count; i++)
+            {
+                boundedPriorityList.Add(i, this.Metric(this.source[i], target));
+            }
+
+            return boundedPriorityList;
+        }
+
+        /// <inheritdoc />
         public IEnumerable<T> RadialSearch(T center, double radius)
         {
-            return this.Source.Where(point => this.Metric(point, center) <= radius).ToList();
+            return this.source.Where(point => this.Metric(point, center) <= radius).ToList();
         }
+
+        /// <inheritdoc />
+        public IEnumerable<int> RadialSearchIndexes(T center, double radius)
+        {
+            return this.source.FindAllIndex(point => this.Metric(point, center) <= radius);
+        }
+
+        /// <inheritdoc />
+        public T this[int index] => this.source[index];
+
+        /// <inheritdoc />
+        public IEnumerable<T> this[IEnumerable<int> indexes] => this.source.WithIndexes(indexes);
     }
 }

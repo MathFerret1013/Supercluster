@@ -49,21 +49,21 @@
     <Compile Include="Classification\KNearestNeighbors{T}.cs" />
     <Compile Include="Clustering\KMeans{T}.cs" />
     <Compile Include="Core\CollectionUtilities.cs" />
+    <Compile Include="Structures\BoundablePriorityList.cs" />
+    <Compile Include="Structures\ClusterDictionary.cs" />
     <Compile Include="Structures\Interfaces\ISpatialQueryable.cs" />
-    <Compile Include="Structures\BoundedPriorityList.cs" />
     <Compile Include="Structures\KDTree\HyperRect.cs" />
     <Compile Include="Structures\KDTree\KDTree.cs" />
     <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigation.cs" />
     <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigator.cs" />
     <Compile Include="Structures\KDTree\Utilities\BoundedPriorityListExtensions.cs" />
-    <Compile Include="Structures\MTree\MTree.cs" />
     <Compile Include="Structures\MTree\NewDesign\DistanceMatrix.cs" />
     <Compile Include="Structures\MTree\NewDesign\MNode.cs" />
     <Compile Include="Structures\MTree\NewDesign\MNodeEntry.cs" />
     <Compile Include="Structures\MTree\NewDesign\PromotionResult.cs" />
     <Compile Include="Structures\MTree\Utilities.cs" />
+    <Compile Include="Structures\MTree\MTree.cs" />
     <Compile Include="Core\DoubleEqualityComparer.cs" />
-    <Compile Include="Structures\KnnPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structures\MetricSpaceSubset.cs" />
     <Compile Include="Core\SuperclusterContants.cs" />
@@ -76,6 +76,7 @@
     <None Include="Structures\KDTree\LICENSE" />
     <None Include="Structures\KDTree\README.md" />
     <None Include="Structures\MTree\README.md" />
+    <None Include="TODO.md" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />

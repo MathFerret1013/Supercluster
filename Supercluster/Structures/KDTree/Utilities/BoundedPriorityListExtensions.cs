@@ -27,7 +27,7 @@ namespace Supercluster.Structures.KDTree.Utilities
         /// <returns>The points and nodes in the <see cref="KDTree{TDimension,TNode}"/> implicitly referenced by the <see cref="BoundedPriorityList{TElement,TPriority}"/>.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Tuple<TDimension[], TNode>[] ToResultSet<TPriority, TDimension, TNode>(
-           this BoundedPriorityList<int, TPriority> list,
+           this BoundablePriorityList<int, TPriority> list,
            KDTree<TDimension, TNode> tree)
            where TDimension : IComparable<TDimension>
            where TPriority : IComparable<TPriority>

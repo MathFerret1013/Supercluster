@@ -208,12 +208,13 @@
         /// <param name="source"></param>
         /// <param name="indexes"></param>
         /// <returns></returns>
-        public static T[] SubsetByIndex<T>(this IList<T> source, int[] indexes)
+        public static T[] WithIndexes<T>(this IList<T> source, IEnumerable<int> indexes)
         {
-            var returnArray = new T[indexes.Length];
-            for (int i = 0; i < indexes.Length; i++)
+            var indexArray = indexes.ToArray();
+            var returnArray = new T[indexArray.Length];
+            for (int i = 0; i < indexArray.Length; i++)
             {
-                returnArray[i] = source[indexes[i]];
+                returnArray[i] = source[indexArray[i]];
             }
 
             return returnArray;
@@ -226,7 +227,7 @@
         /// <param name="source"></param>
         /// <param name="indexes"></param>
         /// <returns></returns>
-        public static T[][] SubsetByIndex<T>(this T[,] source, int[] indexes)
+        public static T[][] WithIndexes<T>(this T[,] source, int[] indexes)
         {
             var returnArray = new T[indexes.Length][];
             for (int i = 0; i < indexes.Length; i++)

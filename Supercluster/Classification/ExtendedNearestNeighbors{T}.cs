@@ -97,11 +97,11 @@
                     distances = distances.OrderBy(d => d[0]).ToList();
 
                     // calculates the distances for each Point 
-                    var testingMuDistances = distances.SubsetByIndex(indicies).Select(x => x[1]).ToArray();
+                    var testingMuDistances = distances.WithIndexes(indicies).Select(x => x[1]).ToArray();
 
                     // only get the k-th nearest neighbor
-                    var trainingMuDis = this.WeightedKNNDistance.SubsetByIndex(indicies).Select(x => x[this.K - 1]).ToArray();
-                    var trainingMuClass = this.WeightedKNNLabels.SubsetByIndex(indicies).Select(x => x[this.K - 1]).ToArray();
+                    var trainingMuDis = this.WeightedKNNDistance.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
+                    var trainingMuClass = this.WeightedKNNLabels.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
 
                     var diffDistance = testingMuDistances.ArraySubtract(trainingMuDis);
                     var indexesLessThanZero = diffDistance.FindAllIndex(d => d <= 0);
@@ -110,7 +110,7 @@
                     if (numTrainingNN[j] > 0)
                     {
                         numSameTraining[j] =
-                            trainingMuClass.SubsetByIndex(indexesLessThanZero.ToArray()).Count(m => m == j);
+                            trainingMuClass.WithIndexes(indexesLessThanZero.ToArray()).Count(m => m == j);
                     }
                 }
 
@@ -192,11 +192,11 @@
                 distances = distances.OrderBy(d => d[0]).ToList();
 
                 // calculates the distances for each Point 
-                var testingMuDistances = distances.SubsetByIndex(indicies).Select(x => x[1]).ToArray();
+                var testingMuDistances = distances.WithIndexes(indicies).Select(x => x[1]).ToArray();
 
                 // only get the k-th nearest neighbor
-                var trainingMuDis = this.WeightedKNNDistance.SubsetByIndex(indicies).Select(x => x[this.K - 1]).ToArray();
-                var trainingMuClass = this.WeightedKNNLabels.SubsetByIndex(indicies).Select(x => x[this.K - 1]).ToArray();
+                var trainingMuDis = this.WeightedKNNDistance.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
+                var trainingMuClass = this.WeightedKNNLabels.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
 
                 var diffDistance = testingMuDistances.ArraySubtract(trainingMuDis);
                 var indexesLessThanZero = diffDistance.FindAllIndex(d => d <= 0);
@@ -205,7 +205,7 @@
                 if (numTrainingNN[j] > 0)
                 {
                     numSameTraining[j] =
-                        trainingMuClass.SubsetByIndex(indexesLessThanZero.ToArray()).Count(m => m == j);
+                        trainingMuClass.WithIndexes(indexesLessThanZero.ToArray()).Count(m => m == j);
                 }
             }
 

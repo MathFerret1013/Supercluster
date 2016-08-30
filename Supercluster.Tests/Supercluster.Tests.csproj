@@ -4,18 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{818F4FC0-BB21-4905-A028-0CBB357B8E39}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0D661C93-C40A-4B3F-AFE8-B7D24A36F4AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Workbench</RootNamespace>
-    <AssemblyName>Workbench</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Supercluster.Tests</RootNamespace>
+    <AssemblyName>Supercluster.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +23,6 @@
     <CodeAnalysisRuleSet>..\Supercluster\Supercluster.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,6 +32,10 @@
     <CodeAnalysisRuleSet>..\Supercluster\Supercluster.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,21 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classification\CollectionUtilitiesTests.cs" />
+    <Compile Include="Structures\KDTree\AccuracyTest.cs" />
+    <Compile Include="Structures\BoundablePriorityTest.cs" />
+    <Compile Include="Structures\MetricSpaceSubsetTests.cs" />
+    <Compile Include="Structures\MTree\FastMTree.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Structures\MTree\Metrics.cs" />
+    <Compile Include="Structures\MTree\MTreeUnitTests.cs" />
+    <Compile Include="Classification\ExtendedNearestNeighborsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Supercluster.Tests\Supercluster.Tests.csproj">
-      <Project>{0D661C93-C40A-4B3F-AFE8-B7D24A36F4AD}</Project>
-      <Name>Supercluster.Tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Supercluster\Supercluster.csproj">
       <Project>{454782A4-2DA2-49A0-BD91-E2B130B2382D}</Project>
       <Name>Supercluster</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Structures\packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
