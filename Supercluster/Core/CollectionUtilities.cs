@@ -9,6 +9,54 @@
     /// </summary>
     public static class CollectionUtilities
     {
+        public static int MinIndex<T>(this IEnumerable<T> source)
+        {
+            var comparer = Comparer<T>.Default;
+            using (var enumerator = source.GetEnumerator())
+            {
+                var minElement = enumerator.Current;
+                var minIndex = 0;
+
+                var i = 1;
+                while (enumerator.MoveNext())
+                {
+                    if (comparer.Compare(enumerator.Current, minElement) < 0)
+                    {
+                        minElement = enumerator.Current;
+                        minIndex = i;
+                    }
+
+                    i++;
+                }
+
+                return minIndex;
+            }
+        }
+
+        public static int MaxIndex<T>(this IEnumerable<T> source)
+        {
+            var comparer = Comparer<T>.Default;
+            using (var enumerator = source.GetEnumerator())
+            {
+                var maxElement = enumerator.Current;
+                var maxIndex = 0;
+
+                var i = 1;
+                while (enumerator.MoveNext())
+                {
+                    if (comparer.Compare(enumerator.Current, maxElement) > 0)
+                    {
+                        maxElement = enumerator.Current;
+                        maxIndex = i;
+                    }
+
+                    i++;
+                }
+
+                return maxIndex;
+            }
+        }
+
         /// <summary>
         /// Gets the index of the elements returned by the <c>IEnumerable.Max()</c> function.
         /// </summary>

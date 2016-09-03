@@ -20,20 +20,31 @@
     /// <typeparam name="T"></typeparam>
     public class MTree<T>
     {
+
+        public T this[int index] => this.internalArray[index];
+
         /// <summary>
-        /// 
+        /// The internal array storing the actual points in the tree.
         /// </summary>
         private List<T> internalArray = new List<T>();
 
-        public MTree()
-        {
-            this.Root = new MNode<int> { ParentEntry = null, Capacity = this.Capacity };
-        }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MTree{T}"/> class.
+        /// An MTree is a type search tree supporting range and nearest neighbor searches.
+        /// An <see cref="MTree{T}"/> is self balancing so data may be added after construction.
+        /// An <see cref="MTree{T}"/> is faster than a <see cref="Supercluster.Structures.KDTree"/>
+        /// for very high-dimensional data. Also, each point in an <see cref="MTree{T}"/> does not have
+        /// to have an explicit coordinate representation. The spatial relationship between points is determined
+        /// completely by the provided <paramref name="metric"/>.
+        /// </summary>
+        /// <param name="metric">A distance function satisfying the triangle inequality.</param>
+        /// <param name="capacity">The capacity of each node in the tree.</param>
+        /// <param name="data"></param>
         public MTree(Func<T, T, double> metric, int capacity, IEnumerable<T> data)
         {
             this.Metric = metric;
             this.Root = new MNode<int> { ParentEntry = null, Capacity = capacity };
+            this.Capacity = capacity;
 
             foreach (var element in data)
             {
@@ -41,61 +52,81 @@
             }
         }
 
-        public int Capacity = 3;
+        /// <summary>
+        /// The capacity of each node in the tree. Varying the capacity can some times decrease search time.
+        /// The exact relationship depends on the spatial / statistical properties of your data set.
+        /// </summary>
+        public int Capacity { get; }
 
-        public MNode<int> Root;
+        /// <summary>
+        /// The root node of the MTree.
+        /// </summary>
+        public MNode<int> Root { get; private set; }
 
-        public Func<T, T, double> Metric;
+        /// <summary>
+        /// The metric used for distance computations between points in the tree. This metric function
+        /// must satisfy the triangle inequality or the search functions will return incorrect results.
+        /// </summary>
+        public Func<T, T, double> Metric { get; }
 
-        #region Add Method
-
-        public void Add(T newEntry)
+        /// <summary>
+        /// Added a new point to the tree.
+        /// </summary>
+        /// <param name="point">The point to add to the tree..</param>
+        public void Add(T point)
         {
-            this.internalArray.Add(newEntry);
+            this.internalArray.Add(point);
             this.Add(this.Root, new MNodeEntry<int> { Value = this.internalArray.Count - 1 });
         }
 
+        /// <summary>
+        /// Attempts to add the <see cref="MNodeEntry{TValue}"/> to the specified node in the tree. If the node cannot be added the tree will create new nodes and rebalance.
+        /// </summary>
+        /// <param name="node">The node to add the new entry to.</param>
+        /// <param name="newNodeEntry">The new node entry to add.</param>
         private void Add(MNode<int> node, MNodeEntry<int> newNodeEntry)
         {
             /*
-                Note for my first attempt I will implement that algorithm exactly as described in the paper
+                NOTE: The insertion, split, partition and promotion methods are quite complicated. If you are trying to understand this code you should
+                really consider reading the original paper:
                 P. Ciaccia, M. Patella, and P. Zezula. M-tree: an efficient access method for similarity search in metric spaces.
-                Insert Algorithm
             */
 
+            // If we are trying to insert into an internal node then we determine if the new entry resides in the ball of any
+            // entry in the current node. If it does reside in a ball, then we recurse in to that entry's child node.
+            // If the new entry does NOT reside in any of the balls then we picks the entry whose ball should expand the least to enclose
+            // the new node entry.
             if (node.IsInternalNode)
             {
-                var internalNode = node;
-                var entries = internalNode.Entries;
-                // let N_in = entries such that d(O_r, O_n) <= r(O_r)
+                // Anonymous type to store the entries and their distance from the new node entry.
+                var entriesWithDistance = node.Entries.Select(n => new { Node = n, Distance = this.Metric(this[n.Value], this[newNodeEntry.Value]) }).ToArray();
 
-                // these are the balls in which our newEntry already resides in
-                // TODO: Don't double compute the distances
-                var entries_in = entries.Where(n => this.Metric(this.internalArray[n.Value], this.internalArray[newNodeEntry.Value]) <= n.CoveringRadius).ToArray();
+                // This would be all the entries
+                var ballsContainingEntry = entriesWithDistance.Where(d => d.Distance < d.Node.CoveringRadius).ToArray();
                 MNodeEntry<int> closestEntry;
-                if (entries_in.Length > 0) // new entry is currently in the region of a ball
+
+                if (ballsContainingEntry.Any())
                 {
-                    // TODO: This is the second computation
-                    var elementDistances = entries_in.Select(e => this.Metric(this.internalArray[e.Value], this.internalArray[newNodeEntry.Value])).ToList();
-                    closestEntry = entries_in[elementDistances.IndexOf(elementDistances.Min())];
+                    // New entry is currently in the region of a ball
+                    closestEntry = ballsContainingEntry[ballsContainingEntry.Select(b => b.Distance).MinIndex()].Node;
                 }
-                else // the new element does not currently reside in any of the current regions balls
+                else
                 {
-                    // since we are not in any of the balls we find which ball we are closest to and extend that ball
-                    // we choose the ball whose radius we must increase the least
-                    var elementDistances =
-                        entries.Select(e => this.Metric(this.internalArray[e.Value], this.internalArray[newNodeEntry.Value]) - e.CoveringRadius).ToList();
-                    closestEntry = entries[elementDistances.IndexOf(elementDistances.Min())];
-                    closestEntry.CoveringRadius = this.Metric(this.internalArray[closestEntry.Value], this.internalArray[newNodeEntry.Value]);
+                    // The new element does not currently reside in any of the current regions balls.
+                    // Since we are not in any of the balls we find which whose radius we must increase the least
+                    var closestEntryIndex = entriesWithDistance.Select(d => d.Distance - d.Node.CoveringRadius).MinIndex();
+                    closestEntry = entriesWithDistance[closestEntryIndex].Node;
+                    closestEntry.CoveringRadius = entriesWithDistance[closestEntryIndex].Distance;
                 }
 
-                // recurse into the closest elements subtree
+                // Recurse into the closest elements subtree
                 this.Add(closestEntry.ChildNode, newNodeEntry);
             }
-            else // node is a leaf node
+            else
             {
                 if (!node.IsFull)
                 {
+                    // Node is a leaf node. If the node is not full we simply add to that node.
                     if (node == this.Root)
                     {
                         node.Add(newNodeEntry);
@@ -114,8 +145,11 @@
 
         }
 
-        #endregion
-
+        /// <summary>
+        /// Splits a leaf node and adds the <paramref name="newEntry"/>
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="newEntry"></param>
         private void Split(MNode<int> node, MNodeEntry<int> newEntry)
         {
             var nodeIsRoot = node == this.Root;
@@ -136,6 +170,7 @@
 
             var newNode = new MNode<int> { Capacity = this.Capacity };
             var promotionResult = this.Promote(entries.ToArray(), node.IsInternalNode);
+
             // TODO: Does not need to be an array
             node.Entries = promotionResult.FirstPartition;
             newNode.Entries = promotionResult.SecondPartition;
@@ -190,13 +225,12 @@
 
                     parent.Add(promotionResult.SecondPromotionObject);
                 }
-
             }
         }
 
-
         // TODO: If we are willing to take a performance hit, we could abstract both the promote and partition methods
         // TODO: Some partition methods actually DEPEND on the partition method.
+
         /// <summary>
         /// Chooses two <see cref="MNodeEntry{T}"/>s to be promoted up the tree. The two nodes are chosen 
         /// according to the mM_RAD split policy with balanced partitions defined in reference [1] pg. 431.
@@ -213,17 +247,13 @@
 
             /*
                 2. mM_RAD Promotion an Balanced Partitioning
-
                 Part of performing the mM_RAD promotion algorithm is
                 implicitly calculating all possible partitions. 
-
                 For each pair of objects we calculate a balanced partition.
                 The pair for which the maximum of the two covering radii is the smallest
                 is the objects we promote.
-
                 In the iterations below, every thing is index-based to keep it as fast as possible.
             */
-
 
             // The minimum values which will be traced through out the mM_RAD algorithm
             var minPair = new Tuple<int, int>(-1, -1);
@@ -239,24 +269,19 @@
                 // Get the indexes of the points not in the current pair
                 var pointsNotInPair =
                     Enumerable.Range(0, entries.Length).Except(new[] { pair.Item1, pair.Item2 }).ToList();
-                //TODO: Optimize
+                // TODO: Optimize
 
                 var partitions = this.BalancedPartition(pair, pointsNotInPair, distanceMatrix);
                 var localFirstPartition = partitions.Item1;
                 var localSecondPartition = partitions.Item2;
 
-
                 /*
                     As specified in reference [1] pg. 430. If we are splitting a leaf node,
                     then the covering radius of promoted object O_1 with partition P_1 is
-
                     coveringRadius_O_1 = max{ distance(O_1, O_i) | where O_i in P_1 }
-
                     If we are splitting an internal node then the covering radius
                     of promoted object O_1 with partition P_1 is
-
                     coveringRadius_O_1 = max{ distance(O_1, O_i) + CoveringRadius of O_i | where O_i in P_1 }
-
                 */
 
                 var firstPromotedObjectCoveringRadius = localFirstPartition.MaxDistanceFromFirst(distanceMatrix);
@@ -292,14 +317,10 @@
                 }
             }
 
-
             /*
-
                 3. Creating the MNodeEntry Objects
-
                 Now that we have correctly identified the objects to be promoted an each partition
                 we start setting and/or calculating some of the properties on the node entries
-
             */
 
             // set values of promoted objects
@@ -307,7 +328,6 @@
             var secondPartition = new List<MNodeEntry<int>>();
             minFirstPromotedObject.Value = entries[minPair.Item1].Value;
             minSecondPromotedObject.Value = entries[minPair.Item2].Value;
-
 
             // TODO: Set distance from parent in partition
             firstPartition.AddRange(entries.WithIndexes(minFirstPartition));
@@ -322,7 +342,6 @@
                 secondPartition[i].DistanceFromParent = distanceMatrix[minSecondPartition[0], minSecondPartition[i]];
             }
 
-
             var promotionResult = new PromotionResult<int>
             {
                 FirstPromotionObject = minFirstPromotedObject,
@@ -331,11 +350,9 @@
                 SecondPartition = secondPartition
             };
 
-
             // TODO: This method is called from the split method. In the split method we call both promote an partition in one method
 
             return promotionResult;
-
         }
 
         private double CalculateCoveringRadius(
@@ -522,7 +539,6 @@
                 pointsNotInPair.RemoveAt(minIndex);
                 k++;
             }
-
 
             return new Tuple<List<int>, List<int>>(firstPartition, secondPartition);
         }
