@@ -7,6 +7,7 @@
     using Supercluster.MTree;
     using Supercluster.MTree.NewDesign;
     using Supercluster.Structures;
+    using Supercluster.Structures.Interfaces;
 
     /// <summary>
     /// 
@@ -16,12 +17,62 @@
     /// References:
     /// [1] P. Ciaccia, M. Patella, and P. Zezula. M-tree: an efficient access method for similarity search in metric spaces. 
     /// In Proceedings of the 23rd International Conference on Very Large Data Bases (VLDB), pages 426–435, Athens, Greece, August 1997
+    /// 
+    /// [2] Samet, H., Foundations of Multidimensional and Metric Data Structures 1st Ed., Elsevier/Morgan Kaufmann, 2006
     /// </remarks>
     /// <typeparam name="T"></typeparam>
-    public class MTree<T>
+    public class MTree<T> : ISpatialQueryable<T>
     {
+        #region ISpatialQuerable Implementation
 
+        /// <inheritdoc />
         public T this[int index] => this.internalArray[index];
+
+        /// <inheritdoc />
+        public IEnumerable<T> this[IEnumerable<int> indexes] => this.internalArray.WithIndexes(indexes);
+
+        /// <inheritdoc />
+        public int Add(T item)
+        {
+            this.internalArray.Add(item);
+            this.Add(this.Root, new MNodeEntry<int> { Value = this.internalArray.Count - 1 });
+            return this.internalArray.Count - 1;
+        }
+
+        /// <inheritdoc />
+        public IEnumerable<T> RadialSearch(T center, double radius) => this[this.RadialSearchIndexes(center, radius)];
+
+        /// <inheritdoc />
+        public IEnumerable<int> RadialSearchIndexes(T center, double radius)
+        {
+            var indexes = new List<int>();
+            this.RadialSearch(this.Root, center, radius, indexes);
+            return indexes;
+        }
+
+        /// <inheritdoc />
+        public IEnumerable<T> NearestNeighbors(T target, int k) => this[this.NearestNeighborIndexes(target, k)];
+
+        /// <inheritdoc />
+        public IEnumerable<int> NearestNeighborIndexes(T target, int k)
+        {
+            var priorityQueue = new BoundablePriorityList<MNode<int>, double>(-1, false) { { this.Root, 0 } };
+            var nearestNeighboorList = new BoundablePriorityList<MNodeEntry<int>, double>(k)
+                                           {
+                                                   { default(MNodeEntry<int>), double.PositiveInfinity }
+                                           };
+
+            while (priorityQueue.Any())
+            {
+                var nextNode = priorityQueue.MinElement;
+                priorityQueue.RemoveAt(priorityQueue.Count - 1);
+                this.KnnNodeSearch(nextNode, target, nearestNeighboorList, priorityQueue);
+            }
+
+            return nearestNeighboorList.Select(m => m.Value);
+        }
+
+        #endregion
 
         /// <summary>
         /// The internal array storing the actual points in the tree.
@@ -68,16 +119,6 @@
         /// must satisfy the triangle inequality or the search functions will return incorrect results.
         /// </summary>
         public Func<T, T, double> Metric { get; }
-
-        /// <summary>
-        /// Added a new point to the tree.
-        /// </summary>
-        /// <param name="point">The point to add to the tree..</param>
-        public void Add(T point)
-        {
-            this.internalArray.Add(point);
-            this.Add(this.Root, new MNodeEntry<int> { Value = this.internalArray.Count - 1 });
-        }
 
         /// <summary>
         /// Attempts to add the <see cref="MNodeEntry{TValue}"/> to the specified node in the tree. If the node cannot be added the tree will create new nodes and rebalance.
@@ -372,7 +413,7 @@
             return maxRadius;
         }
 
-        public void RadialSearch(MNode<int> node, T ballCenter, double ballRadius, List<T> results)
+        private void RadialSearch(MNode<int> node, T ballCenter, double ballRadius, ICollection<int> results)
         {
             if (node == this.Root) // node is the root
             {
@@ -412,36 +453,12 @@
                             var distanceCurrentToCenter = this.Metric(this.internalArray[entry.Value], ballCenter);
                             if (distanceCurrentToCenter <= ballRadius)
                             {
-                                results.Add(this.internalArray[entry.Value]);
+                                results.Add(entry.Value);
                             }
                         }
                     }
                 }
             }
-        }
-
-        public IEnumerable<T> NearestNeighbors(T queryObject, int k)
-        {
-
-            // BPL
-            var priorityQueue = new BoundablePriorityList<MNode<int>, double>(-1, false)
-                                        {
-                                                { this.Root, 0 }
-                                        };
-            var nearestNeighboorList = new BoundablePriorityList<MNodeEntry<int>, double>(k)
-                                                {
-                                                        { default(MNodeEntry<int>), double.PositiveInfinity }
-                }
-                                            ;
-
-            while (priorityQueue.Any())
-            {
-                var nextNode = priorityQueue.MinElement;
-                priorityQueue.RemoveAt(priorityQueue.Count - 1);
-                this.KnnNodeSearch(nextNode, queryObject, nearestNeighboorList, priorityQueue);
-            }
-
-            return nearestNeighboorList.Select(m => this.internalArray[m.Value]);
         }
 
         private void KnnNodeSearch(

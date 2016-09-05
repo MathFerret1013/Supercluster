@@ -93,7 +93,7 @@
                     // TODO: Optimize the shit out of this
 
                     // Get all the indexes of the current class
-                    var indicies = this.trainingOutputs.FindAllIndex(l => l == j).ToArray();
+                    var indicies = this.trainingOutputs.WhereIndex(l => l == j).ToArray();
                     distances = distances.OrderBy(d => d[0]).ToList();
 
                     // calculates the distances for each Point 
@@ -104,7 +104,7 @@
                     var trainingMuClass = this.WeightedKNNLabels.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
 
                     var diffDistance = testingMuDistances.ArraySubtract(trainingMuDis);
-                    var indexesLessThanZero = diffDistance.FindAllIndex(d => d <= 0);
+                    var indexesLessThanZero = diffDistance.WhereIndex(d => d <= 0);
 
                     numTrainingNN[j] = indexesLessThanZero.Count();
                     if (numTrainingNN[j] > 0)
@@ -188,7 +188,7 @@
                 // TODO: Optimize the shit out of this
 
                 // Get all the indexes of the current class
-                var indicies = this.trainingOutputs.FindAllIndex(l => l == j).ToArray();
+                var indicies = this.trainingOutputs.WhereIndex(l => l == j).ToArray();
                 distances = distances.OrderBy(d => d[0]).ToList();
 
                 // calculates the distances for each Point 
@@ -199,7 +199,7 @@
                 var trainingMuClass = this.WeightedKNNLabels.WithIndexes(indicies).Select(x => x[this.K - 1]).ToArray();
 
                 var diffDistance = testingMuDistances.ArraySubtract(trainingMuDis);
-                var indexesLessThanZero = diffDistance.FindAllIndex(d => d <= 0);
+                var indexesLessThanZero = diffDistance.WhereIndex(d => d <= 0);
 
                 numTrainingNN[j] = indexesLessThanZero.Count();
                 if (numTrainingNN[j] > 0)
@@ -276,7 +276,7 @@
             // Parallel.For(0, classes, currentClassLabel =>
             for (int currentClassLabel = 0; currentClassLabel < this.Clusters; currentClassLabel++)
             {
-                var currentClassIndexes = trainingOutputs.FindAllIndex(t => t == currentClassLabel).ToArray();
+                var currentClassIndexes = trainingOutputs.WhereIndex(t => t == currentClassLabel).ToArray();
                 var numTraining = currentClassIndexes.Length;
 
                 var count = 0;

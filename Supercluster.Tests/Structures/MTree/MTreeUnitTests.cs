@@ -23,7 +23,7 @@
         [Test]
         public void MtreeBuildTest()
         {
-            /*
+
             var points = new double[][]
                   {
                       new double[] { 1, 3 },
@@ -36,12 +36,7 @@
                       new double[] { 9.75, 9.75 }
                   };
 
-            var mtree = new FastMTree<double[]> { Capacity = 3, Metric = Metrics.L2Norm_Double };
-            foreach (var point in points)
-            {
-                mtree.Add(point);
-            }
-
+            var mtree = new MTree<double[]>(Metrics.L2Norm_Double, 3, points);
             /*
                 1. Ensure all node values are in the right place
             */
@@ -68,10 +63,10 @@
 
             */
 
-            /*
             var rootEntries = mtree.Root.Entries;
             var middleEntries = rootEntries[0].ChildNode.Entries.Concat(rootEntries[1].ChildNode.Entries).ToArray();
-            var leafEntries = new List<MNodeEntry<double[]>>();
+            var leafEntries = new List<MNodeEntry<int>>();
+
             foreach (var entry in middleEntries)
             {
                 leafEntries.AddRange(entry.ChildNode.Entries);
@@ -80,26 +75,26 @@
             // Check node entry values
 
             // Test Root entries
-            Assert.That(rootEntries[0].Value, Is.EqualTo(points[0]));
-            Assert.That(rootEntries[1].Value, Is.EqualTo(points[3]));
+            Assert.That(mtree[rootEntries[0].Value], Is.EqualTo(points[0]));
+            Assert.That(mtree[rootEntries[1].Value], Is.EqualTo(points[3]));
 
             // Test mid entries
-            Assert.That(middleEntries[0].Value, Is.EqualTo(points[0]));
-            Assert.That(middleEntries[1].Value, Is.EqualTo(points[2]));
-            Assert.That(middleEntries[2].Value, Is.EqualTo(points[3]));
-            Assert.That(middleEntries[3].Value, Is.EqualTo(points[4]));
+            Assert.That(mtree[middleEntries[0].Value], Is.EqualTo(points[0]));
+            Assert.That(mtree[middleEntries[1].Value], Is.EqualTo(points[2]));
+            Assert.That(mtree[middleEntries[2].Value], Is.EqualTo(points[3]));
+            Assert.That(mtree[middleEntries[3].Value], Is.EqualTo(points[4]));
 
             // Test leaf entries
-            Assert.That(leafEntries[0].Value, Is.EqualTo(points[0]));
-            Assert.That(leafEntries[1].Value, Is.EqualTo(points[1]));
-            Assert.That(leafEntries[2].Value, Is.EqualTo(points[2]));
-            Assert.That(leafEntries[3].Value, Is.EqualTo(points[5]));
-            Assert.That(leafEntries[4].Value, Is.EqualTo(points[3]));
-            Assert.That(leafEntries[5].Value, Is.EqualTo(points[7]));
-            Assert.That(leafEntries[6].Value, Is.EqualTo(points[4]));
-            Assert.That(leafEntries[7].Value, Is.EqualTo(points[6]));
+            Assert.That(mtree[leafEntries[0].Value], Is.EqualTo(points[0]));
+            Assert.That(mtree[leafEntries[1].Value], Is.EqualTo(points[1]));
+            Assert.That(mtree[leafEntries[2].Value], Is.EqualTo(points[2]));
+            Assert.That(mtree[leafEntries[3].Value], Is.EqualTo(points[5]));
+            Assert.That(mtree[leafEntries[4].Value], Is.EqualTo(points[3]));
+            Assert.That(mtree[leafEntries[5].Value], Is.EqualTo(points[7]));
+            Assert.That(mtree[leafEntries[6].Value], Is.EqualTo(points[4]));
+            Assert.That(mtree[leafEntries[7].Value], Is.EqualTo(points[6]));
 
-                2. Ensure all node properties are correct at each level
+            //    2. Ensure all node properties are correct at each level
 
             // Ensure that root node has no parent entry
             Assert.That(mtree.Root.ParentEntry, Is.Null);
@@ -132,8 +127,8 @@
                 Assert.That(entry.EnclosingNode.IsInternalNode, Is.False);
             }
 
-                3. Ensure all Distance from parents are correct
-                Root entries have a distance from parent of -1, so they are not checked here
+            //  3. Ensure all Distance from parents are correct
+            //  Root entries have a distance from parent of -1, so they are not checked here
 
             var distanceMatrix = new DistanceMatrix<double[]>(points, Metrics.L2Norm_Double);
             Assert.That(middleEntries[0].DistanceFromParent, Is.EqualTo(distanceMatrix[0, 0]));
@@ -149,7 +144,7 @@
             Assert.That(leafEntries[5].DistanceFromParent, Is.EqualTo(distanceMatrix[3, 7]));
             Assert.That(leafEntries[6].DistanceFromParent, Is.EqualTo(distanceMatrix[4, 4]));
             Assert.That(leafEntries[7].DistanceFromParent, Is.EqualTo(distanceMatrix[4, 6]));
-            */
+
         }
 
         /// <summary>
@@ -189,17 +184,10 @@
 
             var treeData = global::Supercluster.Tests.Utilities.GenerateDoubles(dataSize, range, 5);
             var testData = global::Supercluster.Tests.Utilities.GenerateDoubles(testDataSize, range, 5);
-            var tree = new MTree<double[]> { Metric = Metrics.L2Norm_Double };
-
-            // build tree
-            foreach (var point in treeData)
-            {
-                tree.Add(point);
-            }
+            var tree = new MTree<double[]>(Metrics.L2Norm_Double, 3, treeData);
 
             // perform searches
-            var resultsList = new List<double[]>();
-            tree.RadialSearch(tree.Root, testData[0], radius, resultsList);
+            var resultsList = tree.RadialSearch(testData[0], radius);
 
             var linearResults = new List<double[]>();
             foreach (var point in treeData)
@@ -241,11 +229,7 @@
                 var target = testData[index];
 
                 // load tree
-                var fastMTree = new MTree<double[]> { Capacity = 5, Metric = Metrics.L2Norm_Double };
-                foreach (var point in treeData)
-                {
-                    fastMTree.Add(point);
-                }
+                var mtree = new MTree<double[]>(Metrics.L2Norm_Double, 3, treeData);
 
 
                 // linear search
@@ -257,7 +241,7 @@
                         .ToArray();
 
                 // tree knn
-                var resultsList = fastMTree.NearestNeighbors(target, neighboors).ToArray();
+                var resultsList = mtree.NearestNeighbors(target, neighboors).ToArray();
 
                 for (int i = 0; i < resultsList.Length; i++)
                 {

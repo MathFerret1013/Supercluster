@@ -92,7 +92,6 @@
         /// </summary>
         private readonly double[] DistanceBetweenUniquePairs;
 
-
         /// <summary>
         /// Produces a rectangular array that contains the values in the distance matrix.
         /// Useful if you cannot use the <see cref="DistanceMatrix{T}"/>.

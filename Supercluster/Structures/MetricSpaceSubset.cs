@@ -99,7 +99,7 @@
         /// <inheritdoc />
         public IEnumerable<int> RadialSearchIndexes(T center, double radius)
         {
-            return this.source.FindAllIndex(point => this.Metric(point, center) <= radius);
+            return this.source.WhereIndex(point => this.Metric(point, center) <= radius);
         }
 
         /// <inheritdoc />

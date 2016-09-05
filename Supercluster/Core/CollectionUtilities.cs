@@ -9,11 +9,21 @@
     /// </summary>
     public static class CollectionUtilities
     {
-        public static int MinIndex<T>(this IEnumerable<T> source)
+        #region LinqToIndexes
+
+        /// <summary>
+        /// Returns the minimum value in a sequence of <typeparamref name="TSource"/> values using
+        /// the default <see cref="Comparer{TSource}"/>.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to determine the index of the minimum value.</param>
+        /// <returns>The index of the minimum value in <paramref name="source"/>.</returns>
+        public static int MinIndex<TSource>(this IEnumerable<TSource> source)
         {
-            var comparer = Comparer<T>.Default;
+            var comparer = Comparer<TSource>.Default;
             using (var enumerator = source.GetEnumerator())
             {
+                enumerator.MoveNext();
                 var minElement = enumerator.Current;
                 var minIndex = 0;
 
@@ -33,11 +43,52 @@
             }
         }
 
-        public static int MaxIndex<T>(this IEnumerable<T> source)
+        /// <summary>
+        /// Invokes a transform function on each element of <paramref name="source"/> and returns the index of the minimum <typeparamref name="TResult"/> value.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <typeparam name="TResult">The type of the result of the <paramref name="selector"/>.</typeparam>
+        /// <param name="source">A sequence of values to apply the transform <see cref="selector"/> to.</param>
+        /// <param name="selector">A transform to apply to each element in <paramref name="source"/>.</param>
+        /// <returns>The index of the minimum <typeparamref name="TResult"/> value.</returns>
+        public static int MinIndex<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
-            var comparer = Comparer<T>.Default;
+            var comparer = Comparer<TResult>.Default;
             using (var enumerator = source.GetEnumerator())
             {
+                enumerator.MoveNext();
+                var minElement = selector(enumerator.Current);
+                var minIndex = 0;
+
+                var i = 1;
+                while (enumerator.MoveNext())
+                {
+                    if (comparer.Compare(selector(enumerator.Current), minElement) < 0)
+                    {
+                        minElement = selector(enumerator.Current);
+                        minIndex = i;
+                    }
+
+                    i++;
+                }
+
+                return minIndex;
+            }
+        }
+
+        /// <summary>
+        /// Returns the maximum value in a sequence of <typeparamref name="TSource"/> values using
+        /// the default <see cref="Comparer{TSource}"/>.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to determine the index of the maximum value.</param>
+        /// <returns>The index of the maximum value in <paramref name="source"/>.</returns>
+        public static int MaxIndex<TSource>(this IEnumerable<TSource> source)
+        {
+            var comparer = Comparer<TSource>.Default;
+            using (var enumerator = source.GetEnumerator())
+            {
+                enumerator.MoveNext();
                 var maxElement = enumerator.Current;
                 var maxIndex = 0;
 
@@ -58,49 +109,217 @@
         }
 
         /// <summary>
-        /// Gets the index of the elements returned by the <c>IEnumerable.Max()</c> function.
+        /// Invokes a transform function on each element of <paramref name="source"/> and returns the index of the maximum <typeparamref name="TResult"/> value.
         /// </summary>
-        /// <param name="array">The input array</param>
-        /// <returns>The index of the max element in the array.</returns>
-        public static int MaxIndex(this int[] array)
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <typeparam name="TResult">The type of the result of the <paramref name="selector"/>.</typeparam>
+        /// <param name="source">A sequence of values to apply the transform <paramref name="selector"/> to.</param>
+        /// <param name="selector">A transform to apply to each element in <paramref name="source"/>.</param>
+        /// <returns>The index of the maximum <typeparamref name="TResult"/> value.</returns>
+        public static int MaxIndex<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
-            var largestElement = int.MinValue;
-            var largestElementIndex = -1;
-
-            for (var i = 0; i < array.Length; i++)
+            var comparer = Comparer<TResult>.Default;
+            using (var enumerator = source.GetEnumerator())
             {
-                if (largestElement < array[i])
-                {
-                    largestElement = array[i];
-                    largestElementIndex = i;
-                }
-            }
+                enumerator.MoveNext();
+                var maxElement = selector(enumerator.Current);
+                var maxIndex = 0;
 
-            return largestElementIndex;
+                var i = 1;
+                while (enumerator.MoveNext())
+                {
+                    if (comparer.Compare(selector(enumerator.Current), maxElement) > 0)
+                    {
+                        maxElement = selector(enumerator.Current);
+                        maxIndex = i;
+                    }
+
+                    i++;
+                }
+
+                return maxIndex;
+            }
         }
 
         /// <summary>
-        /// Gets the index of the elements returned by the <c>IEnumerable.Max()</c> function.
+        /// Returns the indexes of the elements in <paramref name="source"/> satisfying the predicate.
         /// </summary>
-        /// <param name="array">The input array</param>
-        /// <returns>The index of the max element in the array.</returns>
-        public static int MaxIndex(this double[] array)
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to filter based on <paramref name="predicate"/>.</param>
+        /// <param name="predicate">The predicate use to filter values in <paramref name="source"/>.</param>
+        /// <returns>The indexes of the elements in <paramref name="source"/> that satisfy <paramref name="predicate"/>.</returns>
+        public static IEnumerable<int> WhereIndex<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
-            var largestElement = double.MinValue;
-            var largestElementIndex = -1;
-
-            for (var i = 0; i < array.Length; i++)
+            var indexes = new List<int>();
+            using (var enumerator = source.GetEnumerator())
             {
-                if (largestElement < array[i])
+                var i = 0;
+                while (enumerator.MoveNext())
                 {
-                    largestElement = array[i];
-                    largestElementIndex = i;
+                    if (predicate(enumerator.Current))
+                    {
+                        indexes.Add(i);
+                    }
+
+                    i++;
+                }
+
+                return indexes;
+            }
+        }
+
+        /// <summary>
+        /// Returns the index of the first element of a sequence that satisfies the given predicate.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to find the first element satisfying the <paramref name="predicate"/>.</param>
+        /// <param name="predicate">A predicate to test elements in <paramref name="source"/>.</param>
+        /// <returns>The index of the first element in <paramref name="source"/> that satisfy <paramref name="predicate"/>.</returns>
+        public static int FirstIndex<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+        {
+            using (var enumerator = source.GetEnumerator())
+            {
+                var i = 0;
+                while (enumerator.MoveNext())
+                {
+                    if (predicate(enumerator.Current))
+                    {
+                        return i;
+                    }
+
+                    i++;
                 }
             }
 
-            return largestElementIndex;
+            throw new InvalidOperationException($"No element satisfies the condition in {nameof(predicate)}.");
         }
 
+        /// <summary>
+        /// Returns the index of the first element of a sequence that satisfies the given predicate.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to find the first element satisfying the <paramref name="predicate"/>.</param>
+        /// <param name="predicate">A predicate to test elements in <paramref name="source"/>.</param>
+        /// <returns>The index of the first element in <paramref name="source"/> that satisfy <paramref name="predicate"/>.
+        /// If no element satisfies the <paramref name="predicate"/> then -1 is returned.</returns>
+        public static int FirstIndexOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+        {
+            using (var enumerator = source.GetEnumerator())
+            {
+                var i = 0;
+                while (enumerator.MoveNext())
+                {
+                    if (predicate(enumerator.Current))
+                    {
+                        return i;
+                    }
+
+                    i++;
+                }
+            }
+
+            return -1;
+        }
+
+        /// <summary>
+        /// Returns the index of the last element of a sequence that satisfies the given predicate.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to find the last element satisfying the <paramref name="predicate"/>.</param>
+        /// <param name="predicate">A predicate to test elements in <paramref name="source"/>.</param>
+        /// <returns>The index of the last element in <paramref name="source"/> that satisfy <paramref name="predicate"/>.</returns>
+        public static int LastIndex<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+        {
+            var lastIndex = -1;
+            using (var enumerator = source.GetEnumerator())
+            {
+                var i = 0;
+                while (enumerator.MoveNext())
+                {
+                    if (predicate(enumerator.Current))
+                    {
+                        lastIndex = i;
+                    }
+
+                    i++;
+                }
+            }
+
+            if (lastIndex == -1)
+            {
+                throw new InvalidOperationException($"No element satisfies the condition in {nameof(predicate)}.");
+            }
+
+            return lastIndex;
+        }
+
+        /// <summary>
+        /// Returns the index of the last element of a sequence that satisfies the given predicate.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to find the last element satisfying the <paramref name="predicate"/>.</param>
+        /// <param name="predicate">A predicate to test elements in <paramref name="source"/>.</param>
+        /// <returns>The index of the last element in <paramref name="source"/> that satisfy <paramref name="predicate"/>.
+        /// If no element satisfies the <paramref name="predicate"/> then -1 is returned.</returns>
+        public static int LastIndexOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
+        {
+            var lastIndex = -1;
+            using (var enumerator = source.GetEnumerator())
+            {
+                var i = 0;
+                while (enumerator.MoveNext())
+                {
+                    if (predicate(enumerator.Current))
+                    {
+                        lastIndex = i;
+                    }
+
+                    i++;
+                }
+            }
+
+            return lastIndex;
+        }
+
+        /// <summary>
+        /// Returns all elements of a sequence whose index is in the provided sequence of indexes.
+        /// Note: If an index is greater than the number of elements in <paramref name="source"/> it is ignored.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements in <paramref name="source"/>.</typeparam>
+        /// <param name="source">A sequence of values to extract elements from.</param>
+        /// <param name="indexes">The indexes </param>
+        /// <returns>All elements in <paramref name="source"/> whose index is in <paramref name="indexes"/>.</returns>
+        public static IEnumerable<TSource> WithIndexes<TSource>(this IEnumerable<TSource> source, IEnumerable<int> indexes)
+        {
+            var indexArray = indexes.OrderBy(i => i).ToArray();
+
+            if (indexArray[0] < 0)
+            {
+                throw new IndexOutOfRangeException("All indexes must be non-negative.");
+            }
+
+            var indexCounter = 0;
+            var elementList = new List<TSource>();
+
+            using (var enumerator = source.GetEnumerator())
+            {
+                var i = 0;
+                while (enumerator.MoveNext() && indexCounter < indexArray.Length)
+                {
+                    if (i == indexArray[indexCounter])
+                    {
+                        elementList.Add(enumerator.Current);
+                        indexCounter++;
+                    }
+
+                    i++;
+                }
+            }
+
+            return elementList;
+        }
+
+        #endregion
 
         /// <summary>
         /// Gets the index of the elements returned by the <c>IEnumerable.Max()</c> function. 
@@ -125,7 +344,7 @@
             // we have more than one maximal element.Choose a random index
             if (array.Count(x => x == largestElement) > 1)
             {
-                var indexes = array.FindAllIndex(x => x == largestElement).ToArray();
+                var indexes = array.WhereIndex(x => x == largestElement).ToArray();
                 var rand = new Random();
                 var randomIndex = rand.Next(0, indexes.Length);
 
@@ -144,28 +363,6 @@
         public static int MinIndex(this int[] array)
         {
             var smallestElement = int.MaxValue;
-            var smallestElementIndex = -1;
-
-            for (var i = 0; i < array.Length; i++)
-            {
-                if (smallestElement > array[i])
-                {
-                    smallestElement = array[i];
-                    smallestElementIndex = i;
-                }
-            }
-
-            return smallestElementIndex;
-        }
-
-        /// <summary>
-        /// Gets the index of the elements returned by the <c>IEnumerable.Min()</c> function.
-        /// </summary>
-        /// <param name="array">The input array</param>
-        /// <returns>The index of the min element in the array.</returns>
-        public static int MinIndex(this double[] array)
-        {
-            var smallestElement = double.MaxValue;
             var smallestElementIndex = -1;
 
             for (var i = 0; i < array.Length; i++)
@@ -205,32 +402,6 @@
         }
 
         /// <summary>
-        /// Returns the indexes of all elements in an array that satisfy a given predicate.
-        /// </summary>
-        /// <typeparam name="T">The data type of the array.</typeparam>
-        /// <param name="source">The collection to enumerate through and test the predicate.</param>
-        /// <param name="predicate">The predicate to be test.</param>
-        /// <returns>The indexes of all elements in the collection that satisfy the given predicate.</returns>
-        public static IEnumerable<int> FindAllIndex<T>(this IEnumerable<T> source, Func<T, bool> predicate)
-        {
-            int i = 0;
-            var indexes = new List<int>();
-            var enumerator = source.GetEnumerator();
-            while (enumerator.MoveNext())
-            {
-                if (predicate(enumerator.Current))
-                {
-                    indexes.Add(i);
-                }
-
-                i++;
-            }
-
-            return indexes;
-        }
-
-
-        /// <summary>
         /// Sets all elements of a rectangular array to a given value.
         /// </summary>
         /// <param name="source">The rectuangular array.</param>
@@ -247,25 +418,6 @@
                     source[i, j] = value;
                 }
             }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="indexes"></param>
-        /// <returns></returns>
-        public static T[] WithIndexes<T>(this IList<T> source, IEnumerable<int> indexes)
-        {
-            var indexArray = indexes.ToArray();
-            var returnArray = new T[indexArray.Length];
-            for (int i = 0; i < indexArray.Length; i++)
-            {
-                returnArray[i] = source[indexArray[i]];
-            }
-
-            return returnArray;
         }
 
         /// <summary>

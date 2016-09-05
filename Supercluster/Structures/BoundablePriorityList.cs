@@ -162,7 +162,7 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void RemoveAllPriorities(Func<TPriority, bool> predicate)
         {
-            var indexesToKeep = this.priorityList.FindAllIndex(p => !predicate(p)).ToArray();
+            var indexesToKeep = this.priorityList.WhereIndex(p => !predicate(p)).ToArray();
             this.priorityList = this.priorityList.WithIndexes(indexesToKeep).ToList();
             this.elementList = this.elementList.WithIndexes(indexesToKeep).ToList();
         }
@@ -173,7 +173,7 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void RemoveAllElements(Func<TElement, bool> predicate)
         {
-            var indexesToKeep = this.elementList.FindAllIndex(e => !predicate(e)).ToArray();
+            var indexesToKeep = this.elementList.WhereIndex(e => !predicate(e)).ToArray();
             this.priorityList = this.priorityList.WithIndexes(indexesToKeep).ToList();
             this.elementList = this.elementList.WithIndexes(indexesToKeep).ToList();
         }
