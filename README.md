@@ -26,7 +26,7 @@ Here is a list of currently supported algorithms:
 
 ### Data Structures
 * ~~A KD-Tree implementation.~~ Done: https://github.com/MathFerret1013/Supercluster.KDTree
-* An M-Tree implemention.
+* ~~An M-Tree implemention.~~ (1st C# implementation (That I could find.))
 
 ### Code
 * Refactor of the ENN code.
