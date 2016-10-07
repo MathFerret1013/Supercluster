@@ -1,9 +1,4 @@
-﻿// Supercluster
-// https://github.com/MathFerret1013/
-// eregina92@gmail.com
-//  
-
-namespace Supercluster.Classification
+﻿namespace Supercluster.Classification
 {
     using System;
     using System.Collections.Generic;
@@ -57,26 +52,26 @@ namespace Supercluster.Classification
     [Serializable]
     public class KNearestNeighbors<T>
     {
-
         /// <summary>
         /// The internal dataset of the points observed.
         /// </summary>
-        private ISpatialQueryable<T> internalData;
+        private ISpatialQueryable<T> internalDataStructure;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="KNearestNeighbors{T}"/> class.
         /// </summary>
         /// <param name="k">The number of neighbors during classification</param>
-        /// <param name="clusters">The number of clusters (classes) that the model should have</param>
-        public KNearestNeighbors(int k, Func<T, T, double> metric)
+        /// <param name="dataStructure">The backing data structure</param>
+        public KNearestNeighbors(int k, Func<T, T, double> metric, ISpatialQueryable<T> dataStructure = null)
         {
             this.Metric = metric;
 
             this.K = k;
 
-            this.internalData = new MetricSpaceSubset<T>((x, y) => this.Metric(x, y));
+            this.internalDataStructure = dataStructure ?? new MetricSpaceSubset<T>(metric);
+
             this.clusterIndexDictionary = new Dictionary<int, List<int>>();
-            this.Clusters = new ClusterDictionary<int, T>(this.internalData, this.clusterIndexDictionary);
+            this.Clusters = new ClusterDictionary<int, T>(this.internalDataStructure, this.clusterIndexDictionary);
         }
 
         /// <summary>
@@ -99,12 +94,12 @@ namespace Supercluster.Classification
         /// <summary>
         /// Trains the model with a single given point and an appropriate class label.
         /// </summary>
-        /// <param name="label">The class label of the given <paramref name="point"/></param>
         /// <param name="point">The point to add to the model</param>
+        /// <param name="label">The class label of the given <paramref name="point"/></param>
         /// <exception cref="ArgumentException">Thrown if the label of the point does not exist in the current model.</exception>
         public void Train(T point, int label)
         {
-            var pointIndex = this.internalData.Add(point);
+            var pointIndex = this.internalDataStructure.Add(point);
             if (this.clusterIndexDictionary.ContainsKey(label))
             {
                 this.clusterIndexDictionary[label].Add(pointIndex);
@@ -118,21 +113,31 @@ namespace Supercluster.Classification
         /// <summary>
         /// Trains the model with a set of data-points and class labels.
         /// </summary>
+        /// <param name="points">The set of point</param>
         /// <param name="labels">The set of class labels.</param>
-        /// <param name="point">The set of point</param>
-        public void TrainAll(IEnumerable<T> point, IEnumerable<int> labels)
+        public void TrainAll(IEnumerable<T> points, IEnumerable<int> labels)
         {
-            if (labels.Count() != point.Count())
+            if (labels.Count() != points.Count())
             {
                 throw new ArgumentException("The number of labels and data points is not the same.");
             }
 
-            var labelsEnumerator = labels.GetEnumerator();
-            var datapointsEnumerator = point.GetEnumerator();
+            var pointIndexes = this.internalDataStructure.Add(points).ToArray();
+            var labelsArray = labels.ToArray();
 
-            while (labelsEnumerator.MoveNext() && datapointsEnumerator.MoveNext())
+            for (int i = 0; i < pointIndexes.Length; i++)
             {
-                this.Train(datapointsEnumerator.Current, labelsEnumerator.Current);
+                var label = labelsArray[i];
+                var pointIndex = pointIndexes[i];
+
+                if (this.clusterIndexDictionary.ContainsKey(label))
+                {
+                    this.clusterIndexDictionary[label].Add(pointIndex);
+                }
+                else
+                {
+                    this.clusterIndexDictionary.Add(label, new List<int> { pointIndex });
+                }
             }
         }
 
@@ -143,7 +148,7 @@ namespace Supercluster.Classification
         /// <returns>A class label</returns>
         public int Classify(T datapoint)
         {
-            var nearestNeighborIndexes = this.internalData.NearestNeighborIndexes(datapoint, this.K);
+            var nearestNeighborIndexes = this.internalDataStructure.NearestNeighborIndexes(datapoint, this.K);
 
             // NOTE: We assume that a point belongs to only one cluster
             var keys = this.clusterIndexDictionary.Keys.ToArray();

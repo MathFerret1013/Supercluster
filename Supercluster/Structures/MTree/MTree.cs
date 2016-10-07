@@ -8,6 +8,7 @@
     using Supercluster.MTree.NewDesign;
     using Supercluster.Structures;
     using Supercluster.Structures.Interfaces;
+    using Supercluster.Structures.KDTree;
 
     /// <summary>
     ///
@@ -28,9 +29,7 @@
     /// 
     /// MTrees are not easy to implement and their heavy reliance on Metric Space properties makes them quite difficult (if even possible) to modify for a non-metric space application.
     /// 
-    /// 
     /// </list>
-    /// 
     /// 
     /// References:
     /// [1] P. Ciaccia, M. Patella, and P. Zezula. M-tree: an efficient access method for similarity search in metric spaces. 
@@ -38,7 +37,7 @@
     /// 
     /// [2] Samet, H., Foundations of Multidimensional and Metric Data Structures 1st Ed., Elsevier/Morgan Kaufmann, 2006
     /// </remarks>
-    /// <seealso cref="Supercluster.KDTree"/>
+    /// <seealso cref="KDTree{TNode}"/>
     /// <typeparam name="T"></typeparam>
     public class MTree<T> : ISpatialQueryable<T>
     {
@@ -49,6 +48,11 @@
 
         /// <inheritdoc />
         public IEnumerable<T> this[IEnumerable<int> indexes] => this.internalArray.WithIndexes(indexes);
+
+        public IEnumerable<int> Add(IEnumerable<T> items)
+        {
+            return items.Select(this.Add);
+        }
 
         /// <inheritdoc />
         public int Add(T item)
@@ -512,8 +516,7 @@
                         }
                     }
                 }
-                else if (Math.Abs(
-                             this.Metric(this.internalArray[node.ParentEntry.Value], queryObject) - entry.DistanceFromParent)
+                else if (Math.Abs(this.Metric(this.internalArray[node.ParentEntry.Value], queryObject) - entry.DistanceFromParent)
                          < maxPriority)
                 {
                     var distanceFromQueryObject = this.Metric(this.internalArray[entry.Value], queryObject);

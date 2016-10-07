@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>Supercluster.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\Supercluster.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -49,14 +50,14 @@
     <Compile Include="Classification\KNearestNeighbors{T}.cs" />
     <Compile Include="Clustering\KMeans{T}.cs" />
     <Compile Include="Core\CollectionUtilities.cs" />
+    <Compile Include="Core\Metrics.cs" />
     <Compile Include="Structures\BoundablePriorityList.cs" />
     <Compile Include="Structures\ClusterDictionary.cs" />
     <Compile Include="Structures\Interfaces\ISpatialQueryable.cs" />
-    <Compile Include="Structures\KDTree\HyperRect.cs" />
     <Compile Include="Structures\KDTree\KDTree.cs" />
-    <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigation.cs" />
-    <Compile Include="Structures\KDTree\Utilities\BinaryTreeNavigator.cs" />
-    <Compile Include="Structures\KDTree\Utilities\BoundedPriorityListExtensions.cs" />
+    <Compile Include="Structures\KDTree\HyperRect.cs" />
+    <Compile Include="Structures\KDTree\KDTreeNavigator.cs" />
+    <Compile Include="Core\CoordinateSelector.cs" />
     <Compile Include="Structures\MTree\DistanceMatrix.cs" />
     <Compile Include="Structures\MTree\MNode.cs" />
     <Compile Include="Structures\MTree\MNodeEntry.cs" />
@@ -67,10 +68,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structures\MetricSpaceSubset.cs" />
     <Compile Include="Core\SuperclusterContants.cs" />
+    <Compile Include="Core\ReverseComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="stylecop.json" />
+    <AdditionalFiles Include="stylecop.json" />
     <None Include="Supercluster.ruleset" />
     <None Include="Supercluster.pfx" />
     <None Include="Structures\KDTree\LICENSE" />
@@ -83,7 +85,9 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Structures\KDTree\Utilities\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

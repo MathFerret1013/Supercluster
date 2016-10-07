@@ -4,14 +4,12 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using global::Supercluster.MTree;
+    using global::Supercluster.Core;
     using global::Supercluster.MTree.NewDesign;
-    using global::Supercluster.MTree.Tests;
     using global::Supercluster.Structures.MTree;
 
     using NUnit.Framework;
 
-    using Supercluster.MTree;
 
     [TestFixture]
     public class MTreeUnitTests
@@ -36,7 +34,7 @@
                       new double[] { 9.75, 9.75 }
                   };
 
-            var mtree = new MTree<double[]>(Metrics.L2Norm_Double, 3, points);
+            var mtree = new MTree<double[]>(Metrics.L2Norm, 3, points);
             /*
                 1. Ensure all node values are in the right place
             */
@@ -130,7 +128,7 @@
             //  3. Ensure all Distance from parents are correct
             //  Root entries have a distance from parent of -1, so they are not checked here
 
-            var distanceMatrix = new DistanceMatrix<double[]>(points, Metrics.L2Norm_Double);
+            var distanceMatrix = new DistanceMatrix<double[]>(points, Metrics.L2Norm);
             Assert.That(middleEntries[0].DistanceFromParent, Is.EqualTo(distanceMatrix[0, 0]));
             Assert.That(middleEntries[1].DistanceFromParent, Is.EqualTo(distanceMatrix[0, 2]));
             Assert.That(middleEntries[2].DistanceFromParent, Is.EqualTo(distanceMatrix[3, 3]));
@@ -163,13 +161,13 @@
                                  new double[] { Math.PI, Math.E }
                              };
 
-            var distMatrix = new DistanceMatrix<double[]>(points, Metrics.L2Norm_Double);
+            var distMatrix = new DistanceMatrix<double[]>(points, Metrics.L2Norm);
 
             for (int i = 0; i < points.Length; i++)
             {
                 for (int j = 0; j < points.Length; j++)
                 {
-                    Assert.That(Metrics.L2Norm_Double(points[i], points[j]), Is.EqualTo(distMatrix[i, j]));
+                    Assert.That(Metrics.L2Norm(points[i], points[j]), Is.EqualTo(distMatrix[i, j]));
                 }
             }
         }
@@ -184,19 +182,12 @@
 
             var treeData = global::Supercluster.Tests.Utilities.GenerateDoubles(dataSize, range, 5);
             var testData = global::Supercluster.Tests.Utilities.GenerateDoubles(testDataSize, range, 5);
-            var tree = new MTree<double[]>(Metrics.L2Norm_Double, 3, treeData);
+            var tree = new MTree<double[]>(Metrics.L2Norm, 3, treeData);
 
             // perform searches
             var resultsList = tree.RadialSearch(testData[0], radius);
 
-            var linearResults = new List<double[]>();
-            foreach (var point in treeData)
-            {
-                if (Metrics.L2Norm_Double(point, testData[0]) <= radius)
-                {
-                    linearResults.Add(point);
-                }
-            }
+            var linearResults = Utilities.LinearRadialSearch(testData[0], radius, treeData, Metrics.L2Norm);
 
             // sort results
             var sortedTreeResults = resultsList.OrderBy(r => r[0]).ThenBy(r => r[1]).ToArray();
@@ -229,16 +220,11 @@
                 var target = testData[index];
 
                 // load tree
-                var mtree = new MTree<double[]>(Metrics.L2Norm_Double, 3, treeData);
+                var mtree = new MTree<double[]>(Metrics.L2Norm, 3, treeData);
 
 
                 // linear search
-                var linearResults =
-                    treeData.Select(p => new Tuple<double[], double>(p, Metrics.L2Norm_Double(p, target)))
-                        .OrderBy(p => p.Item2)
-                        .Take(neighboors)
-                        .Select(p => p.Item1)
-                        .ToArray();
+                var linearResults = Utilities.LinearNearestNeighboors(target, neighboors, treeData, Metrics.L2Norm);
 
                 // tree knn
                 var resultsList = mtree.NearestNeighbors(target, neighboors).ToArray();
@@ -247,8 +233,8 @@
                 {
                     var result = resultsList[i];
                     var lin = linearResults[i];
-                    var treeDist = Metrics.L2Norm_Double(result, target);
-                    var linDist = Metrics.L2Norm_Double(lin, target);
+                    var treeDist = Metrics.L2Norm(result, target);
+                    var linDist = Metrics.L2Norm(lin, target);
 
                     var check = treeDist == linDist;
                     if (!check)

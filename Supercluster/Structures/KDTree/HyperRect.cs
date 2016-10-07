@@ -88,7 +88,7 @@ namespace Supercluster.DataStructures.KDTree
         /// <summary>
         /// Gets the Point on the rectangle that is closest to the given Point.
         /// If the Point is within the rectangle, then the input Point is the same as the
-        /// output Point.f the Point is outside the rectangle then the Point on the rectangle
+        /// output Point. If the Point is outside the rectangle then the Point on the rectangle
         /// that is closest to the given Point is returned.
         /// </summary>
         /// <param name="toPoint">We try to find a Point in or on the rectangle closest to this Point.</param>

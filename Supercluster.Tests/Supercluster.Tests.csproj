@@ -47,12 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classification\CollectionUtilitiesTests.cs" />
-    <Compile Include="Structures\KDTree\AccuracyTest.cs" />
+    <Compile Include="Structures\KDTree\KDTreeTests.cs" />
     <Compile Include="Structures\BoundablePriorityTest.cs" />
     <Compile Include="Structures\MetricSpaceSubsetTests.cs" />
-    <Compile Include="Structures\MTree\FastMTree.cs" />
     <Compile Include="Utilities.cs" />
-    <Compile Include="Structures\MTree\Metrics.cs" />
     <Compile Include="Structures\MTree\MTreeUnitTests.cs" />
     <Compile Include="Classification\ExtendedNearestNeighborsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

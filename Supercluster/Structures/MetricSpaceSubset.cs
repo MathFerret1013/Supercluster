@@ -46,6 +46,15 @@
         private List<T> source;
 
         /// <inheritdoc />
+        public IEnumerable<int> Add(IEnumerable<T> items)
+        {
+            var beforeMaxIndex = this.source.Count - 1;
+            this.source.AddRange(items);
+            var afterMaxIndex = this.source.Count - 1;
+            return Enumerable.Range(beforeMaxIndex + 1, afterMaxIndex - beforeMaxIndex);
+        }
+
+        /// <inheritdoc />
         public int Add(T item)
         {
             this.source.Add(item);

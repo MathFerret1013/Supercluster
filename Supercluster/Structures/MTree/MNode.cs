@@ -5,7 +5,6 @@ namespace Supercluster.MTree.NewDesign
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
 
-
     public class MNode<TValue>
     {
 

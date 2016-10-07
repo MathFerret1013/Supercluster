@@ -7,6 +7,8 @@
     using System.Linq;
     using System.Runtime.CompilerServices;
 
+    using Supercluster.Core;
+
     /// <summary>
     /// A list of limited length that remains sorted by <typeparamref name="TPriority"/>.
     /// Useful for keeping track of items in nearest neighbor searches. Insert is O(log n). Retrieval is O(1)
@@ -159,6 +161,7 @@
         /// <summary>
         /// Removes all elements that satisfy the given <paramref name="predicate"/>.
         /// </summary>
+        /// <param name="predicate">The predicate function to apply to each priority.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void RemoveAllPriorities(Func<TPriority, bool> predicate)
         {
@@ -169,7 +172,9 @@
 
         /// <summary>
         /// Removes all elements that satisfy the given <paramref name="predicate"/>.
+        /// The corresponding priorities for the elements are also removed.
         /// </summary>
+        /// <param name="predicate">The predicate function to apply to each element.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void RemoveAllElements(Func<TElement, bool> predicate)
         {
@@ -178,11 +183,10 @@
             this.elementList = this.elementList.WithIndexes(indexesToKeep).ToList();
         }
 
-
         /// <summary>
         /// Removes an element the corresponding priority at the specified index.
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="index">The index of the element to remove.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void RemoveAt(int index)
         {
@@ -206,25 +210,6 @@
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
-        }
-
-        public Tuple<TElement, TPriority>[] ToPairedList()
-        {
-            return this.elementList.Zip(this.priorityList, (e, p) => new Tuple<TElement, TPriority>(e, p)).ToArray();
-        }
-    }
-
-    /// <summary>
-    /// An <see cref="IComparer"/> that reverses the result of the <see cref="Compare"/> function.
-    /// Used to reverse sort order.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class ReverseComparer<T> : IComparer<T>
-    {
-        /// <inheritdoc />
-        public int Compare(T x, T y)
-        {
-            return Comparer<T>.Default.Compare(y, x);
         }
     }
 }

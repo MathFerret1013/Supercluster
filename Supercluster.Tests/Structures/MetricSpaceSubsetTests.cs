@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Supercluster.Tests.Structures
 {
@@ -10,7 +7,7 @@ namespace Supercluster.Tests.Structures
 
     using NUnit.Framework;
 
-    using Supercluster.MTree.Tests;
+    using Supercluster.Core;
     using Supercluster.Structures;
 
     using Utilities = Supercluster.Tests.Utilities;
@@ -26,15 +23,15 @@ namespace Supercluster.Tests.Structures
             var range = 1000;
             var radius = 100;
 
-            var realData = Utilities.GenerateDoubles(dataSize, range);
-            var testData = Utilities.GenerateDoubles(testDataSize, range);
-            var metricSpaceSubset = new MetricSpaceSubset<double[]>(realData, Metrics.L2Norm_Double);
+            var realData = Utilities.GenerateDoubles(dataSize, range, 2);
+            var testData = Utilities.GenerateDoubles(testDataSize, range, 2);
+            var metricSpaceSubset = new MetricSpaceSubset<double[]>(realData, Metrics.L2Norm);
 
             // structure search
             var resultsList = metricSpaceSubset.RadialSearch(testData[0], radius);
 
             // linear search
-            var linearResults = realData.Where(point => Metrics.L2Norm_Double(point, testData[0]) <= radius);
+            var linearResults = realData.Where(point => Metrics.L2Norm(point, testData[0]) <= radius);
 
             // sort results
             var sortedResults = resultsList.OrderBy(r => r[0]).ThenBy(r => r[1]).ToArray();
@@ -57,19 +54,18 @@ namespace Supercluster.Tests.Structures
             var range = 1000;
             var neighboors = 100;
 
-            var realData = Utilities.GenerateDoubles(dataSize, range);
-            var testData = Utilities.GenerateDoubles(testDataSize, range);
-            var metricSpaceSubset = new MetricSpaceSubset<double[]>(realData, Metrics.L2Norm_Double);
+            var realData = Utilities.GenerateDoubles(dataSize, range, 2);
+            var testData = Utilities.GenerateDoubles(testDataSize, range, 2);
+            var metricSpaceSubset = new MetricSpaceSubset<double[]>(realData, Metrics.L2Norm);
 
             var stopwatch = new Stopwatch();
 
             // structure search
             var resultsList = metricSpaceSubset.NearestNeighbors(testData[0], neighboors);
-
             var stopwatch2 = new Stopwatch();
 
             // linear search
-            var linearResults = realData.Select(p => new Tuple<double[], double>(p, Metrics.L2Norm_Double(p, testData[0])))
+            var linearResults = realData.Select(p => new Tuple<double[], double>(p, Metrics.L2Norm(p, testData[0])))
                     .OrderBy(p => p.Item2)
                     .Take(neighboors).Select(p => p.Item1);
 

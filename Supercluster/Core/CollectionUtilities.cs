@@ -291,32 +291,7 @@
         /// <returns>All elements in <paramref name="source"/> whose index is in <paramref name="indexes"/>.</returns>
         public static IEnumerable<TSource> WithIndexes<TSource>(this IEnumerable<TSource> source, IEnumerable<int> indexes)
         {
-            var indexArray = indexes.OrderBy(i => i).ToArray();
-
-            if (indexArray[0] < 0)
-            {
-                throw new IndexOutOfRangeException("All indexes must be non-negative.");
-            }
-
-            var indexCounter = 0;
-            var elementList = new List<TSource>();
-
-            using (var enumerator = source.GetEnumerator())
-            {
-                var i = 0;
-                while (enumerator.MoveNext() && indexCounter < indexArray.Length)
-                {
-                    if (i == indexArray[indexCounter])
-                    {
-                        elementList.Add(enumerator.Current);
-                        indexCounter++;
-                    }
-
-                    i++;
-                }
-            }
-
-            return elementList;
+            return indexes.Select(source.ElementAt);
         }
 
         #endregion
