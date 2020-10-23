@@ -25,7 +25,7 @@ Here is a list of currently supported algorithms:
 * [OPTICS](https://en.wikipedia.org/wiki/OPTICS_algorithm)
 
 ### Data Structures
-* ~~A KD-Tree implementation.~~ Done: https://github.com/MathFerret1013/Supercluster.KDTree
+* ~~A KD-Tree implementation.~~ Done: https://github.com/eregina92/Supercluster.KDTree
 * ~~An M-Tree implemention.~~ (1st C# implementation (That I could find.))
 
 ### Code
