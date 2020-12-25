@@ -11,7 +11,7 @@ I am the only developer on the project so I can do it my way.
 * **Appropriate Efficiency:** Code is optimized where it **needs** to be optimized. Let's be honest. This is C#. I can't compete with C++, but more and more people are using high-level languages for data-science. When an optimization can drastically improve performance (e.g., using k-d-trees, multi-threading) I optimize. When optimization complicates the code for a 1% speed increase, I don't.
 
 
-###Algorithms
+### Algorithms
 Here is a list of currently supported algorithms:
 
 * [k-NN](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
